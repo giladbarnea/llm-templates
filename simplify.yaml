@@ -1,0 +1,9 @@
+defaults:
+    text_name: text
+prompt: |-
+    The given $text_name is a little bit awkward and non-idiomatic. Make the smallest changes possible to make it a tiny bit more streamlined and more English-idiomatic.
+
+    $text_name:
+    """
+    $input
+    """
