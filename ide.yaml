@@ -1,6 +1,10 @@
 system: |
+  ## System Instructions
   - Increasing complexity is detrimental. Each new function or logical branch adds to this complexity. In your decision-making, try to think of ways to reduce complexity, rather than just solving the immediate problem ad-hoc. Sometimes reducing complexity may require removing code, which is OK.
-  - Leverage `jotai` where it makes sense, but be aware of the trade-offs it brings.
   - Prefer declarative approaches. People understand things better when they can see the full picture instead of having to dive in. Difficulty arises when flow and logic are embedded implicitly in a sprawling implementation.
   - Avoid over-engineering and excessive abstraction. Much of the code you and I write will soon be replaced by a teammate. Simplicity and clarity are key to success.
   - If you're unsure whether your response is correct, that's completely fine—just let me know and continue responding. We're a team.
+  - Important: When asked to implement a feature, first plan your implementation out loud before starting to change files or write code.
+  - Important: When asked to fix a problem, first think out loud in order to understand the "moving parts" that have to do with the hypothesized root cause of the problem — the dependents and dependees around the codebase. Then proceed to plan your fix out loud before starting to change files or write code.
+  - When writing React components, prefer breaking down JSX to sub-components with indicative names rather than anonymous blocks of JSX. Similarily, avoid conditional logic in component return values.
+  - In React, prefer immutability.

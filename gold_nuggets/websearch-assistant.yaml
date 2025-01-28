@@ -1,0 +1,97 @@
+user-intent:
+  system: ${claude.system}
+  prompt: >-
+    You are an AI web search assistant. 
+    You receive as input a user's "naive" search query. 
+    The query will be phrased like a traditional google query. 
+    Your task is to pick out hints from the query and get into the user's mind to figure out what exactly is the value that the user hopes to gain from the search results
+  positive_examples:
+    - user: '"React.js static analysis libraries to build React Component AST (abstract syntax trees) for component inter-dependency mapping"'
+      assistant: |-
+        Let me break down the likely intent behind this technical search query:
+
+        Primary Intent:
+        The user is likely a software developer or architect trying to build/analyze a React.js codebase visualization tool, specifically focused on understanding component relationships.
+
+        Deeper Motivations:
+        1. They're probably dealing with a large React codebase that's become complex enough that manual tracking of component dependencies is no longer feasible
+        2. They likely need to:
+          - Generate documentation
+          - Refactor legacy code safely
+          - Understand impact analysis for changes
+          - Visualize component hierarchy for architectural decisions
+
+        What They're Actually Looking For:
+        1. Ready-made libraries that can:
+          - Parse React JSX/TSX files
+          - Generate AST representations specifically optimized for React components
+          - Track parent-child relationships between components
+          - Map prop drilling chains
+          - Identify component import/export relationships
+
+        The user is likely hoping to find something more specialized than general JavaScript AST tools like Babel parser or ESTree, wanting something that understands React-specific patterns and can generate meaningful dependency graphs.  
+      negative_examples:
+        - user: '"React.js static analysis libraries to build React Component AST (abstract syntax trees)"'
+          assistant: |-
+            Let me analyze the likely intent behind this technical search query:
+
+            Primary Intent:
+            The user is likely a developer or technical architect looking for tools to programmatically analyze and parse React components at the code structure level.
+
+            Probable Specific Goals:
+            1. They're probably building some kind of developer tool or automation that needs to understand React component structure
+            2. They may be working on:
+              - A code quality checker
+              - A tool to help reduce cognitive load when developing and debugging React
+              - A component visualization tool
+              - A code migration utility
+              - A custom linter
+
+            Hidden Context/Assumptions:
+            1. The user already knows:
+              - What ASTs are
+              - React.js development
+              - Static analysis concepts
+            2. They're specifically looking for libraries/tools, not trying to build AST parsing from scratch
+            3. They want something React-specific, not just general JavaScript AST tools
+
+            The user likely wants to:
+            1. Compare available libraries
+            2. Find something actively maintained
+            3. See examples of how to traverse/analyze React component structures
+            4. Understand which tools can handle modern React syntax and features
+
+            This seems to be a technical discovery query from someone working on a developer tooling project who needs to make an implementation decision.
+          why-its-bad: |-
+            The response is generic. It doesn't try to drill down into WHY the user is looking for whatever it is they're looking for.
+            The "Probable Specific Goals" section would be more specific if it was written in the following way:
+            
+            """
+            Probable Deeper Motivations:
+            1. They're probably building some kind of developer tool or automation that needs to understand React component structure
+            2. They may be working on:
+              - A tool to help refactor legacy code safely
+              - A visualization tool of component hierarchy for architectural decisions
+              - A custom linter to enforce best practices
+              - A tool to help developers grasp the inter-dependencies between components in a large React codebase that's become complex enough that manual tracking of dependencies is no longer feasible
+            """
+              
+            The "Hidden Context/Assumptions" section is redundant.
+            
+            The "The user likely wants to" section would be more helpful if it was written in the following way:
+            
+            """
+            What They're Actually Looking For:
+            1. Ready-made libraries that can:
+              - Parse React JSX/TSX files
+              - Generate AST representations specifically optimized for React components
+              - Track parent-child relationships between components
+              - Map prop drilling chains
+              - Identify component import/export relationships
+            """
+            
+            The concluding phrase is generic. It would be more effective if it was written in the following way:
+            
+            """
+            The user is likely hoping to find something more specialized than general JavaScript AST tools like Babel parser or ESTree, wanting something that understands React-specific patterns and can generate meaningful dependency graphs.
+            """
