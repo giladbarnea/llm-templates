@@ -1,0 +1,39 @@
+army_style:
+  original: Handsdown Vibranium by Sasha Lubyansky. Super-optimized key arrangement. Sasha then further customized it with a whole bunch of combos and macros for quickly typing common words, bigrams and trigams ("nt" and friends). It's a real tour de force and shows just how far you can take a layout in Oryx.
+  shortened: Handsdown Vibranium by Sasha Lubyansky. Super-optimized key arrangement. Customized with combos and macros for common words, bigrams and trigams ("nt", etc.). Showcases Oryx's layout potential.
+code_docs:
+  original: |-
+    /**
+     * Publish an event to Sticklight API.
+     * 
+     * @param {number} eventName - The name of the event to publish
+     * @param {CaptureOptions} data - A free-form dictionary of data to publish. If includes a `$sticklightApiKey` property, it will be used as the API key.
+     * @returns {Promise<AxiosResponse>} A promise that resolves with the API response
+     */
+    export async function capture(eventName: string, data: CaptureOptions): Promise<AxiosResponse> {
+      const { $sticklightApiKey, ...dataWithoutApiKey } = data;
+      const apiKey = resolveSticklightApiKey($sticklightApiKey);
+      const requestBody = {event_name: eventName, data: dataWithoutApiKey};
+
+      const response = await axios.post(
+        `${STICKLIGHT_API_BASE_URL}/events-collect/v1/events`,
+        requestBody,
+        {
+          headers: {
+            accept: "application/json",
+            "x-api-key": apiKey,
+          },
+          timeout: 5000,
+        }
+      );
+
+      return response;
+    }
+  shortened: |-
+    /**
+     * Publish an event to Sticklight API.
+     * 
+     * @param {number} eventName - Name of the event to publish
+     * @param {CaptureOptions} data - Additional data to publish with the event. If `$sticklightApiKey` is included, it will be used as the API key.
+     * @returns {Promise<AxiosResponse>} Promise resolving to the API response
+     */
