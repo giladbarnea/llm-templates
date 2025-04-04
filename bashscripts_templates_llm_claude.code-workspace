@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "../../../../dev/llm-setup"
+		},
+		{
+			"path": "../../HelpfulAssistant"
+		},
+		{
+			"path": "../../../../dev/bashscripts/llm"
 		}
 	],
 	"settings": {

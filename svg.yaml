@@ -1,0 +1,218 @@
+system: You make informative, precise and beautiful SVG diagrams.
+prompt: |
+  The following is a good example of expressing a natural language flow graph as an SVG diagram.
+  
+  <Example_Text_Describing_A_Flow>
+    ```
+    # We are Hunch
+    We are the founders of a new startup called Hunch. We're heavily focused on AI and LLMs. Our target audience is PMs.
+
+    # This Project's Spec
+    This project enables PMs to input a hypothesis (a hunch) about their product's users. User interactions with the PM's product are captured and logged through Hunch's SDK, then stored in our database, which is accessible to the project's backend.
+
+    <Step 1: User Inputs Hunch {implemented=true}>
+    Concretely, our landing page features a single text input box (similar to modern LLM chat services), prompting PMs to share their "hunch." For example: the PM's product is a special email client. Hunches could be:
+    - "Most of our users are Developers"
+    - "A significant portion of users write emails during non-business hours"
+    - "Enterprise users typically include formal greetings and signatures"
+    - "I think users are increasingly discussing technical issues in their emails"
+    </Step 1: User Inputs Hunch>
+
+    <Step 2: Measuring and Testing User Hunch: A Quantifiable Approach
+      {
+        implemented=true
+        input:natural language = user hunch
+        output:natural language = necessary metrics to test hunch
+      }
+    >
+    Once submitted, a cognitive architecture of LLM agents comes up with quantifiable approaches and metrics to test the PM's hunch.
+    For example, conceptually, the metrics necessary to test a hunch like "I think users are increasingly discussing technical issues in their emails" are:
+    - "Users": Need to determine prevalence across user base
+    - "Technical Issues": Need to classify email content for technical discussion
+    - "Increasingly": Need to analyze trend over time
+
+    For each thought-of metric, a more formal structure, designed to set the upcoming data analysis stage up for success, is formed.
+    For example, the formal "Technical Issues" metric can be expressed as:
+    Pattern in data to look for: "Users discussing technical issues in their emails"
+    Extraction Logic: "LLM analysis of email content to detect technical terminology, problem descriptions, and support requests."
+    </Step 2: Measuring and Testing User Hunch: A Quantifiable Approach>
+
+    <Step 3: Data Analysis: Preparation 
+      {
+        implemented=true
+        input:natural language = necessary metrics to test hunch
+        output:natural language = actionable data-oriented enrichment tasks OR conclusion that no action required therefore jump directly to Analysis Communication.
+      }
+    >
+    This stage determines whether current user data contains sufficient information to test the hunch. This involves examining the captured data's schema (reported properties), existing calculated properties (length, timing, etc.), and existing LLM-based properties (Magic Properties: topics, sentiment, style, etc.).
+
+    If the information is sufficient, the data is considered adequate, and agents proceed to the next step (Analysis Communication).
+
+    If not, agents plan to enrich the data to bridge the gap between what's available and what's needed. When planning, they keep in mind how powerful Magic Properties can be as shortcuts, that Calculated Properties serve as convenient SQL units, and that combining them creates synergy allowing for very minimal yet effective enrichment.
+
+    Agent then derive actionable, data-oriented enrichment tasks.
+    </Step 3: Data Analysis: Preparation>
+
+    <Step 4: Data Analysis: Execution
+      {
+        implemented=true
+        input:natural language = actionable data-oriented enrichment tasks
+        output:natural language = changes made and state of data in relation to testing the hunch
+      }
+    >
+    This stage executes the data analysis tasks.
+    The enrichment process will currently be replaced with a mock—an import of a fake function that simply "does the enrichment" and returns a dict specifying the changes made.
+    A natural language output is produced, succinctly summarizing the changes and the data's state in relation to our goal of testing the hunch.
+    </Step 4: Data Analysis: Execution>
+
+    <Step 5: Analysis Communication
+      {
+        implemented=false
+        input:natural language = changes made and state of data in relation to testing the hunch
+        output:natural language = End-user facing summary report communicating the steps taken and the meaningful findings
+      }
+    >
+    As analysis is completed, a summary report communicating the steps taken and the meaningful findings is presented to the user.
+    Something like:
+    Examined 14,782 user journeys
+    Mapped first 3-day activity patterns
+    Correlated with 30-day retention outcomes
+    Identified 3 distinct early engagement clusters
+    Pattern Recognition: Very Strong (96% confidence)
+    </Step 5: Analysis Communication>
+
+    <Step 6: Findings Visualization {implemented=false}>
+    A visualization of the findings is presented to the user.
+    </Step 6: Findings Visualization>
+
+    <Step 7: Summary & Insights {implemented=false}>
+    A concise summary of the findings is presented to the user.
+    Something like:
+    Hunch: confirmed.
+
+    Your observation is powerfully validated! Users who engage on 2+ days within their first 3 days have 78% higher 30-day retention (62% vs. 35%).
+
+    Key Insights:
+    - Day 1 engagement alone isn't predictive; re-engagement on days 2-3 is critical
+    - Three key features used in the first 3 days highly predict power users:
+      - Setting up profile completeness >80%
+      - Inviting 2+ team members
+      - Customizing at least one dashboard
+    - Weekend sign-ups show different optimal engagement patterns than weekday
+    </Step 7: Summary & Insights>
+    ```
+  </Example_Text_Describing_A_Flow>
+  
+  <Example_Resulting_Flow_Graph_SVG>
+    ```
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900">
+      <!-- Background -->
+      <rect width="800" height="900" fill="#f8f9fa" rx="0" ry="0"/>
+      
+      <!-- Title -->
+      <text x="400" y="70" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#1a1a2e">Hunch Workflow Pipeline</text>
+      
+      <!-- Styles -->
+      <defs>
+        <!-- Modern shadow effect -->
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+          <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+        </filter>
+        
+        <!-- Gradient definitions -->
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#4361ee;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#3a0ca3;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#4cc9f0;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#4895ef;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="yellowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#f9c74f;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#f8961e;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#fa95c5;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#f272af;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Arrowhead marker -->
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#6c757d"/>
+        </marker>
+        
+        <!-- Dashed arrow marker -->
+        <marker id="dashedArrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd"/>
+        </marker>
+      </defs>
+      
+      <!-- Nodes -->
+      <!-- Step 1: User Inputs Hunch (Pill shape) -->
+      <rect x="220" y="120" width="360" height="80" rx="40" ry="40" fill="url(#blueGradient)" filter="url(#shadow)"/>
+      <text x="400" y="155" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="white" text-anchor="middle">USER INPUTS HUNCH</text>
+      <text x="400" y="180" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" opacity="0.9">User inputs their hypothesis about product users</text>
+      
+      <!-- Step 2: Measuring and Testing (Rounded Rectangle) -->
+      <rect x="220" y="240" width="360" height="90" rx="15" ry="15" fill="url(#greenGradient)" filter="url(#shadow)"/>
+      <text x="400" y="280" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="white" text-anchor="middle">MEASURING AND TESTING</text>
+      <text x="400" y="305" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" opacity="0.9">Converts natural language hunch into metrics</text>
+      
+      <!-- Step 3: Data Analysis: Preparation (Diamond) -->
+      <polygon points="400,380 475,455 400,530 325,455" fill="url(#yellowGradient)" filter="url(#shadow)"/>
+      <text x="400" y="445" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#343a40" text-anchor="middle">DATA ANALYSIS:</text>
+      <text x="400" y="470" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#343a40" text-anchor="middle">PREPARATION</text>
+      <text x="400" y="495" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#343a40" text-anchor="middle">Determines if current data is sufficient</text>
+      
+      <!-- Step 4: Data Analysis: Execution (Diamond) -->
+      <polygon points="200,570 275,645 200,720 125,645" fill="url(#yellowGradient)" filter="url(#shadow)"/>
+      <text x="200" y="635" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#343a40" text-anchor="middle">DATA ANALYSIS:</text>
+      <text x="200" y="660" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#343a40" text-anchor="middle">EXECUTION</text>
+      <text x="200" y="685" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#343a40" text-anchor="middle">Executes data enrichment tasks</text>
+      
+      <!-- Step 5: Analysis Communication (Parallelogram with softer angles) -->
+      <polygon points="580,570 680,570 660,645 560,645" fill="url(#redGradient)" filter="url(#shadow)"/>
+      <text x="620" y="600" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#333333" text-anchor="middle">ANALYSIS</text>
+      <text x="620" y="625" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#333333" text-anchor="middle">COMMUNICATION</text>
+      
+      <!-- Step 6: Findings Visualization (Parallelogram with softer angles) -->
+      <polygon points="580,685 680,685 660,760 560,760" fill="url(#redGradient)" filter="url(#shadow)"/>
+      <text x="620" y="715" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#333333" text-anchor="middle">FINDINGS</text>
+      <text x="620" y="740" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#333333" text-anchor="middle">VISUALIZATION</text>
+      
+      <!-- Step 7: Summary & Insights (Parallelogram with softer angles) -->
+      <polygon points="380,760 480,760 460,835 360,835" fill="url(#redGradient)" filter="url(#shadow)"/>
+      <text x="420" y="790" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#333333" text-anchor="middle">SUMMARY &amp;</text>
+      <text x="420" y="815" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#333333" text-anchor="middle">INSIGHTS</text>
+      
+      <!-- Edges with subtle curves -->
+      <!-- Step 1 to Step 2 -->
+      <path d="M400,200 C400,210 400,220 400,240" stroke="#6c757d" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+      
+      <!-- Step 2 to Step 3 -->
+      <path d="M400,330 C400,345 400,360 400,380" stroke="#6c757d" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+      
+      <!-- Step 3 to Step 4 -->
+      <path d="M350,480 C315,510 280,540 250,570" stroke="#6c757d" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+      
+      <!-- Step 3 to Step 5 (conditional) -->
+      <path d="M450,480 C485,510 520,540 580,570" stroke="#adb5bd" stroke-width="3" fill="none" stroke-dasharray="8,4" marker-end="url(#dashedArrowhead)"/>
+      <rect x="470" y="510" width="120" height="24" rx="12" ry="12" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+      <text x="530" y="527" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">If data sufficient</text>
+      
+      <!-- Step 4 to Step 5 -->
+      <path d="M275,645 C365,645 455,645 560,645" stroke="#6c757d" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+      
+      <!-- Step 5 to Step 6 -->
+      <path d="M620,645 C620,655 620,665 620,685" stroke="#6c757d" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+      
+      <!-- Step 6 to Step 7 -->
+      <path d="M560,740 C530,750 500,750 480,760" stroke="#6c757d" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    </svg>
+    ```
+  </Example_Resulting_Flow_Graph_SVG>
+  

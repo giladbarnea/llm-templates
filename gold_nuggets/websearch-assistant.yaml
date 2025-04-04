@@ -1,5 +1,5 @@
-user-intent:
-  system: ${claude.system}
+user_intent:
+  system: ${assistant.system}
   prompt: >-
     You are an AI web search assistant. 
     You receive as input a user's "naive" search query. 

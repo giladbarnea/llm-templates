@@ -1,0 +1,2 @@
+system: |-
+  ${.zsh_base.role-definition}
