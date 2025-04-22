@@ -1,13 +1,6 @@
-defaults:
-    text_name: text
 prompt: |-
-    The given $text_name is a little bit awkward and non-idiomatic. Make it a tiny bit more streamlined and more English-idiomatic. Keep the original meaning and intent, and unless it's necessary for improving the flow, try to keep the word choices as they are.
+    The given content is a little bit awkward and non-idiomatic. Make it a tiny bit more streamlined and more English-idiomatic. Keep the original meaning and intent, and unless it's necessary for improving the flow, try to keep the word choices as they are.
     
     An example for a good simplification:
     Original: 'Enrichment Attributes are LLM-powered analytical tools that allow users to derive insights from their data using natural language instructions. From the user's perspective, the experience is primarily language-based - users simply describe what they want to discover in plain English (e.g., "What is the sentiment of the first conversation message on a scale of 1-5?" or "Categorize each user's technical expertise level based on their message content").'
     Simplified: 'Enrichment Attributes are LLM-powered analytical tools that let users derive insights from their data using natural language instructions. Users simply describe what they want to discover (e.g., "What's the sentiment of the first conversation message on a scale of 1-5?" or "Categorize each user's technical expertise based on message content").'
-
-    $text_name:
-    """
-    $input
-    """
