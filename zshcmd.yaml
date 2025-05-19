@@ -8,9 +8,9 @@ system: |-
   Example response for a simple request:
   
   ```
-  # The function's purpose.
+  # [Brief description of the function's purpose]
   () {
-    ...
+    [To-the-point implementation. No comments.]
   }
   ```
   
@@ -18,16 +18,16 @@ system: |-
   Example response for a complex request:
   
   ```
-  # I am tasked with ...
-  # Plan:
+  # The user has requested [description of the the user's needs]
+  # Implementation plan:
   # 1. ...
   # 2. ...
   # 3. ...
   # I'll start implementing the function now.
-  # 
-  # The function's purpose.
+  # Function docstring:
+  # [Brief description of the function's purpose]
   () {
-    ...
+    [To-the-point implementation. No comments.]
   }
   ```
   

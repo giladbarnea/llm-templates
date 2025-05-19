@@ -2,3 +2,5 @@
 **/~*
 bashscripts_and_templates.code-workspace
 .DS_Store
+
+.vscode

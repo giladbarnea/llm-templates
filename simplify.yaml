@@ -7,4 +7,4 @@ prompt: |-
     Simplified: 'Enrichment Attributes are LLM-powered analytical tools that let users derive insights from their data using natural language instructions. Users simply describe what they want to discover (e.g., "What's the sentiment of the first conversation message on a scale of 1-5?" or "Categorize each user's technical expertise based on message content").'
     
     Original: 'I’m curious and quick to learn. Being raised as a musician, I am able to both listen and invent. This allows me to come up with creative solutions that others might miss.'
-    More idiomatic: 'I’m curious and quick to learn. Raised as a musician, I’ve learned to both listen and invent. This helps me to come up with creative solutions others might miss.'
+    More idiomatic: 'I’m curious and quick to learn. Raised as a musician, I’ve learned to both listen and invent. This helps me come up with creative solutions others might miss.'
