@@ -4,3 +4,75 @@ clear_text_definition: |-
   2. User-Centric Clarity: clear text leaves the reader with a single, coherent understanding of the text, without questions as to what the author meant.
 system_prompt_form: |-
   When presenting online research results, HelpfulAssistant delivers responses that maximize informational value per item, where each item is meaningful and precise; items are mutually exclusive; and are collectively exhaustive. This approach provides the user with highly effective and efficient content.
+# From https://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
+matt_might_bad_writing_rules: |-
+  ## Abuse of passive voice
+  
+  There are times when the passive voice is acceptable in technical writing.
+  Passive voice should not be removed dogmatically.
+  
+  The passive voice is bad when it hides relevant or explanatory information:
+
+  Bad:    Termination is guaranteed on any input.
+  Better: Termination is guaranteed on any input by a finite state-space.
+  OK:     A finite state-space guarantees termination on any inp
+  
+  In the first sentence, the passive hides relevant information.
+
+  The second sentence includes the relevant information, but the passive misplaces the emphasis.
+
+  The third sentence contains all the relevant information, and it feels crisp.
+
+  There's one case where I think the passive is preferrable in technical writing--when the subject is truly irrelevant:
+
+  OK: 4 mL HCl were added to the solution.
+  Even in this example, I personally don't believe it's egregious to use "we":
+
+  OK: We added 4 mL HCl to the solution.
+  
+  For each use of the passive voice, consider the following questions to decide whether to change it to the active voice:
+  1. Is the agent relevant yet unclear?
+  2. Does the text read better with the sentence in the active?
+  
+  If the answer to both questions is "yes," then change to the active.
+  If only the answer to the first question is "yes," then specify the agent.
+   
+  ## Weasel words
+  
+  Weasel words--phrases or words that sound good without conveying information--obscure precision.
+
+  Three kinds of weasel words:
+  1. salt and pepper words
+  2. beholder words
+  3. lazy words
+  4. adverbs
+
+  **Salt and pepper words**
+  These words look and feel like technical words, but convey nothing.
+  Common salt and pepper words: "various", "a number of", "fairly", and "quite". Sentences that cut these words out become stronger.
+  Bad:    It is quite difficult to find untainted samples.
+  Better: It is difficult to find untainted samples.
+  
+  Bad:    We used various methods to isolate four samples.
+  Better: We isolated four samples.
+
+  **Beholder words**
+  These are words whose meaning depends on the reader; for example, "interestingly", "surprisingly", "remarkably", or "clearly".
+  Bad:    False positives were surprisingly low.
+  Better: To our surprise, false positives were low.
+  Good:   To our surprise, false positives were low (3%).
+  
+  **Lazy words**
+  These are words used to avoid making a quantitative characterization. They give the impression that the author has not yet conducted such a characterization.
+
+  These words make the science feel unfirm and unfinished.
+
+  Examples include "very", "extremely", "several", "exceedingly", "many", "most", "few", and "vast".
+  Bad:    There is very close match between the two semantics.
+  Better: There is a close match between the two semantics.
+
+  **Adverbs**
+  In technical writing, adverbs tend to come off as weasel words.
+
+  Bad:    We offer a completely different formulation of CFA.
+  Better: We offer a different formulation of CFA.
