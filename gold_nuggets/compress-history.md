@@ -41,7 +41,7 @@ Explanation:
 Besides the special cases of a bug->debug->fix sequence and a high-level information (points 2 and 3), the compression rate should spread these notches evenly across the message list, reflecting that linear decrease:
 Aggressive (1-2 sentences for early messages) -> substantial -> moderate -> light (for later messages) -> none (for the last user-cursor message pair)
 
-Good compression, regardless of the rate, preserves essential information and meaning (aiming for low entropy) while significantly reducing word count (low footprint). Achieve this by prioritizing key words and phrases and discarding fluff, fillers, and inefficient sentences. While some information loss is inevitable when reducing word count, it's crucial to prioritize broad information coverage (high recall), trading some depth and quality to meet the reduction target. A terse executive summary is a good example of high compression: despite a severely limited word count, it touches upon most information points, even if briefly.
+${.compress_base.aggressive}
 
 Keep the original `---\n\n**User|Cursor**\n\n` header of each message.
 
