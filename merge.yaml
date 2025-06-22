@@ -1,0 +1,5 @@
+prompt: |
+  Merge the given texts into a single text.
+  Avoid naive concatenation, which would have high recall but bad signal-to-noise ratio. 
+  A good merge eliminates redundancies by selecting or creating the best version of any overlapping content. 
+  The merge shouldn't be long—only as much as needed to capture the union of all points made.
