@@ -1,0 +1,2 @@
+prompt: |-
+  Do you see any code duplication, obvious mixed concerns/responsibilities, or anything obvious that would make it harder to maintain the app?
