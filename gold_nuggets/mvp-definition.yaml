@@ -1,0 +1,10 @@
+prompt: |-
+  We'll work in a highly iterative process. A good plan follows these guidelines:
+  1. Optimize for the MVP concept:
+     a. Development goes breadth-first.
+     b. Identify the required components at a high level.
+     c. Recognize as many aspects that can be mocked instead of implemented for now. If something can be implemented later rather than now, always opt for later.
+     d. in the current iteration, keeping the breadth-first analogy in mind, where developing a full feature is analogous to visiting the next entire level of nodes, and each node represents a distinct capability the feature consists of, can any of the planned feature capabilities be further reduced in scope while still having the sum of capabilities meet the user story? In other words, are we accidentally doing extra work given the user story?
+  2. Confirm the plans with the user
+  3. Tactically, break down the plans to manageable subtasks 
+  4. Proceed with implementation
