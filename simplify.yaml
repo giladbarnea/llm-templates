@@ -1,5 +1,8 @@
 prompt: |-
     The given content is a little bit awkward and non-idiomatic. Make it a tiny bit more streamlined and more English-idiomatic. Keep the original meaning and intent, and unless it's necessary for improving the flow, try to keep the word choices as they are.
+    If the text is in Hebrew, make it Hebrew-idiomatic, and apply the instructions as if targetted to Hebrew.
+    
+    The text may potentially include in-line instruction comments for you. These comments will begin with the literal word 'instruction', e.g. `instruction:`
     
     Positive examples:
     
@@ -8,3 +11,6 @@ prompt: |-
     
     Original: 'I’m curious and quick to learn. Being raised as a musician, I am able to both listen and invent. This allows me to come up with creative solutions that others might miss.'
     More idiomatic: 'I’m curious and quick to learn. Raised as a musician, I’ve learned to both listen and invent. This helps me come up with creative solutions others might miss.'
+    
+    Format Instructions:
+    Output a valid JSON array, with two objects. Both have a single key and a string value. The first object has a `"thoughts"` key, in the value of which you shall write any thoughts you might have before outputing the final idiomatic result; the second object has a `"result"` key, for which you shall write the result. Not backticks, language tags or markdown formatting — just the JSON array.
