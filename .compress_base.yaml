@@ -1,3 +1,18 @@
+# N=8
+# for ((i=0;i<N;i++)); do
+#  gemini -p "<User Request, Assistant Response>
+# $(yq ".[$((i*2)),$((i*2+1))]" grok.yaml)
+# </User Request, Assistant Response>
+# 
+# Please compress the attached request-response message pair from a conversation between an AI assistant (Assistant) and myself (User).
+# 
+# Good compression, regardless of the rate, preserves essential information and meaning (aiming for low entropy) while significantly reducing word count (low footprint). Achieve this by prioritizing key words and phrases and discarding fluff, fillers, and inefficient sentences. While some information loss is inevitable when reducing word count, it is crucial to prioritize broad information coverage (high recall), trading some depth and quality to meet the reduction target. A terse executive summary is a good example of high compression: despite a severely limited word count, it touches upon most information points, even if briefly.
+# 
+# Surround each message with an XML-like tag: <User>...</User> or <Assistant>...</Assistant>.
+# 
+# Compression aggressiveness (higher is more aggressive, where 100 is brutal and at most 0.1x the original length, 0 is slight): $(printf '%d\n' $(( 100 - ( (3*N - 2*i) * i * i * 100 ) / (N*N*N) )))/100
+# " | tee grok-$((i*2))-$((i*2+1)).md; done
+
 aggressive: "Good compression, regardless of the rate, preserves essential information and meaning (aiming for low entropy) while significantly reducing word count (low footprint). Achieve this by prioritizing key words and phrases and discarding fluff, fillers, and inefficient sentences. While some information loss is inevitable when reducing word count, it's crucial to prioritize broad information coverage (high recall), trading some depth and quality to meet the reduction target. A terse executive summary is a good example of high compression: despite a severely limited word count, it touches upon most information points, even if briefly."
 
 high-quality: |-

@@ -28,6 +28,24 @@ An example for a multi-turn dialog that should be kept as is:
 “Actually,” I said, “the burning question is how to help Mia feel less insecure; she feels so small and at sea herself, she’s pushing you down so she can feel bigger.”
 </multi-turn dialog>
 
+Additionally, the original text may contain simple and obvious formatting issues, such as redundant arbitrary line breaks in middle of sentences, as if wrapped text was copied along with the forced line breaks.
+
+Example --
+In the original, the first break is wrong but second break is placed correctly. Both breaks are wrongly doubled instead of single regardless of position (\n\n):
+"""
+Lorem ipsum dolor sit amet, consectetur adipiscing
+
+elit. 
+
+Vestibulum mollis nec dui in eleifend.
+"""
+
+Fixed: removed the first break completely, kept the second, deduped both (\n\n -> \n):
+"""
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Vestibulum mollis nec dui in eleifend.
+"""
+
 Some elements are more challenging to convert. When encountering one, be resourceful and flexible.
 
 For example, how should you convert headings? 
