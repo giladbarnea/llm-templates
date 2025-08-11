@@ -3,6 +3,7 @@ Format the following ${tag} to be suitable for text-to-speech engines by convert
 Consider: what rich text elements embed information visually? 
 
 Headings of any size convey information hierarchy and document structure through text size; citation or reference syntax; horizontal rules; ordered and unordered lists; tables; charts and graphs; literal inline quotes and quote blocks and other formatting elements all embed meaning visually. Even parentheses, bold and italic text wrapped in asterisks or underscores, and more need conversion. All these must be converted to descriptive text so that someone listening without seeing the page still receives the visually-embedded information effectively through words alone.
+The same principle very much applies to code as well.
 
 How to do this:
 
@@ -49,15 +50,15 @@ Vestibulum mollis nec dui in eleifend.
 Some elements are more challenging to convert. When encountering one, be resourceful and flexible.
 
 For example, how should you convert headings? 
-Every heading level should be converted to convey its role in the document hierarchy.
-Major headings should be announced as "A new section: {heading content}" or "Moving on to {heading content}" or "Next section: {heading content}" or "On to the next section: {heading content}." Be flexible and natural in your word choices. The important thing is to "announce" each new section naturally before reading it; the exact way you choose to announce them doesn't matter much as long as it's clear and flows organically with the context.
+Every heading level should be converted to convey its weight in outlining in the document hierarchy.
+Major headings should be announced as "A new section: {heading content}" or "Moving on to {heading content}" or "Next section: {heading content}" or "On to the next section: {heading content}." Be flexible and natural in your word choices. If this is a book, using "Chapter" makes more sense than "Section". Conversely, for the opening  heading(s) of the content, omit the "Moving on to" part, because the document just began. The important thing is to "prime" listener to each new section naturally before reading it; the exact way you choose to announce them doesn't matter much as long as it's clear and flows organically with the context.
 An example of good flexibility, if the section that just ended carried significant weight, would be to say something like "Okay, so this ends the previous section, and we're moving on to the next one: {heading content}"
 
 Smaller headings should be converted as well.
 Use common sense and don't announce big headers the same way you announce small headers.
-It follows that you should NOT use any Markdown syntax at all, including hash (#) for headers — this beats the point of communicating structure and hierarchy VERBALLY.
+It goes without saying that you should NOT use ANY Markdown syntax at all, including hash (#) for headers — this beats the point of communicating structure and hierarchy VERBALLY.
 
-What about a major heading → subtitle → body sequence? Context matters. Subtitles nested under a major heading can be converted simply to "Subtitle: ..." or "Subheading: ...". 
+What about a major heading → subtitle → body sequence? Context matters. Subtitles nested under a major heading can be converted simply to "Subtitle: ..." or "Subheading: ..." / "Subsection: ...".
 
 How to convert tables, charts and graphs? This requires heavy lifting. Tables serve comparison and consistency between measures. Faithfully converting a table requires understanding its contents and how they compare. Think how to do this with natural, literal language. You can do something like this: 
 
@@ -69,10 +70,11 @@ Continuing to {row2 first cell} {describe its characteristics}, which is similar
 Finally, row3 {describe its key characteristics}, which resembles row2 more than row1—row1 was more {quick reminder of row1's value at the current column}.
 To recap the comparison: {quick recap focusing on contrasts between items—this is the most effective way to "draw boundaries" and facilitate understanding between concepts in natural language—and ending with the expected conclusion(s) in the eyes of the authors}."
 
-
 Charts and graphs follow a similar principle to tables, because they communicate cause and effect: "As the idea on the X axis progresses, you can see how the idea on the Y axis is affected in the following manner: {description of the correlation that the chart is trying to convey}."
 Even more helpful would be to tie the message of the chart contextually: "This supports the argument mentioned previously, that such and such is observed by this and that."
 
 Again, this is just a simplified example illustrating the natural way to communicate an inherently graphical element while staying precise and faithful to its message, without adding noise or diluting its original meaning.
 
-Crucial: everything else that doesn't fall into one of the definitions above is "just the text" (a.k.a. "Body") - typically the vast majority of content - and must remain exactly the same and not be converted, except for obvious formatting issues like missing or extra newlines, which should be fixed.
+Code blocks require a lot of processing as well. Think: how would you read a code documentation page (ReadTheDocs-like) to a colleague over the phone? You would avoid expressing the syntax/semantics/punctuation entirely, and instead "tell" them what's the code about, its important components, what it does generally speaking, and why this code snippet is there (how it ties to the context it resides in). In short, you'd spare them the implementation details and simply express it holistically in a high level.
+
+Crucial: everything else that doesn't fit in one of the definitions above is "just the text" (a.k.a. "Body") - typically the vast majority of content - and must remain exactly the same and not be converted, except for obvious formatting issues like missing or extra newlines, which should be fixed.
