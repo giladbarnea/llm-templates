@@ -71,10 +71,10 @@ Finally, row3 {describe its key characteristics}, which resembles row2 more than
 To recap the comparison: {quick recap focusing on contrasts between items—this is the most effective way to "draw boundaries" and facilitate understanding between concepts in natural language—and ending with the expected conclusion(s) in the eyes of the authors}."
 
 Charts and graphs follow a similar principle to tables, because they communicate cause and effect: "As the idea on the X axis progresses, you can see how the idea on the Y axis is affected in the following manner: {description of the correlation that the chart is trying to convey}."
-Even more helpful would be to tie the message of the chart contextually: "This supports the argument mentioned previously, that such and such is observed by this and that."
+Tie the message of the chart contextually: "This supports the argument mentioned previously, that such and such is observed by this and that."
 
 Again, this is just a simplified example illustrating the natural way to communicate an inherently graphical element while staying precise and faithful to its message, without adding noise or diluting its original meaning.
 
-Code blocks require a lot of processing as well. Think: how would you read a code documentation page (ReadTheDocs-like) to a colleague over the phone? You would avoid expressing the syntax/semantics/punctuation/implementation entirely, and instead "tell" them what's the code about, what it does generally speaking, and why this code snippet is there (how it ties to the context it resides in). In short, you'd spare them the implementation details and simply express it holistically in a high level.
+Code blocks require a lot of processing as well. Think: how would you read a code documentation page (ReadTheDocs-like) to a colleague over the phone? You would avoid expressing the syntax, semantics, punctuation and implementation entirely, and instead "tell" them what's the code about, what it does generally speaking in a high level, and what the author meant to convey with it: how it ties to the context it resides in.
 
 Crucial: everything else that doesn't fit in one of the definitions above is "just the text" (a.k.a. "Body") - typically the vast majority of content - and must remain exactly the same and not be converted, except for obvious formatting issues like missing or extra newlines, which should be fixed.
