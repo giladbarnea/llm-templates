@@ -12,7 +12,7 @@ Citation marks with mere numerical reference should be omitted.
 
 Parentheses for aliases should be replaced by "...which means X."
 
-Numbered lists should be replaced by literal "One: this; Two: that; ...". Bullet lists should be formatted as "Blabla this; blabla that; ...". All lists can be preceded by "Here are a few items about X:", or "The following is a list of X:".
+Numbered lists should be replaced by literal "One: this; Two: that; ...". Bullet lists should be formatted as "Blabla this; blabla that; ...". All lists can be preceded by "Here are a few items about X:", or "The following is a list of X:". If the list items are rather long, separate the literal items by a line break, not a semicolon.
 
 Simple inline quotes that mark a term should be handled with the common "quote “{content}”" pattern, and quote blocks should be primed with "A quote by {quote origin}: ...".
 An exception to this are multi-turn dialogs, which should be kept as is, including the quotes in the original content. This is because the "“Something”, said Lisa. “Response”, replied John." pattern is already a good way to communicate dialog verbally.
@@ -75,6 +75,6 @@ Even more helpful would be to tie the message of the chart contextually: "This s
 
 Again, this is just a simplified example illustrating the natural way to communicate an inherently graphical element while staying precise and faithful to its message, without adding noise or diluting its original meaning.
 
-Code blocks require a lot of processing as well. Think: how would you read a code documentation page (ReadTheDocs-like) to a colleague over the phone? You would avoid expressing the syntax/semantics/punctuation entirely, and instead "tell" them what's the code about, its important components, what it does generally speaking, and why this code snippet is there (how it ties to the context it resides in). In short, you'd spare them the implementation details and simply express it holistically in a high level.
+Code blocks require a lot of processing as well. Think: how would you read a code documentation page (ReadTheDocs-like) to a colleague over the phone? You would avoid expressing the syntax/semantics/punctuation/implementation entirely, and instead "tell" them what's the code about, what it does generally speaking, and why this code snippet is there (how it ties to the context it resides in). In short, you'd spare them the implementation details and simply express it holistically in a high level.
 
 Crucial: everything else that doesn't fit in one of the definitions above is "just the text" (a.k.a. "Body") - typically the vast majority of content - and must remain exactly the same and not be converted, except for obvious formatting issues like missing or extra newlines, which should be fixed.
