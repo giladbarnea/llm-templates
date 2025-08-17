@@ -16,13 +16,17 @@ For complex math expressions, see the section below on code blocks and math expr
 
 Numbered lists should be replaced by literal "One: this; Two: that; ...". Bullet lists should be formatted as "Blabla this; blabla that; ...". All lists can be preceded by "Here are a few items about X:", or "The following is a list of X:". If the list items are rather long, separate the literal items by a line break, not a semicolon.
 
-Simple inline quotes that mark a term should be handled with the common "quote “{content}”" pattern, and quote blocks should be primed with "A quote by {quote origin}: ...".
-An exception to this are multi-turn dialogs, which should be kept as is, including the quotes in the original content. This is because the "“Something”, said Lisa. “Response”, replied John." pattern is already a good way to communicate dialog verbally.
-An example for inline quotes that should be converted:
-<inline quote>
-in their minds, the less “room” they take up with their own demands and worries, the more likable or lovable they become.
-</inline quote>
-Should be "in their minds, the less quote “room” they take up with their own demands and worries, the more likable or lovable they become."
+Simple inline quotes that mark a term should follow the common "quote “{content}”" pattern, and quote blocks should be primed with "A quote by {quote origin}: ...".
+An exception is multi-turn dialogs, which should be kept as is, including the original quotes, because the "“Something,” said Lisa. “Response,” replied John." pattern already communicates dialog well.
+Examples of inline quotes that should be converted:
+
+Original: "in their minds, the less “room” they take up with their own demands and worries, the more likable or lovable they become."
+Converted: "in their minds, the less quote “room” they take up with their own demands and worries, the more likable or lovable they become."
+
+Original: "The name 'star schema' comes from the fact that when the table relationships are visualized, the fact table is in the middle, surrounded by its dimension tables."
+Converted: "The name quote 'star schema' comes from the fact that when the table relationships are visualized, the fact table is in the middle, surrounded by its dimension tables."
+
+
 
 An example for a multi-turn dialog that should be kept as is:
 <multi-turn dialog>
