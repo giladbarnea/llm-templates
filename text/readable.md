@@ -11,6 +11,8 @@ Citation marks mentioning an author or source can be replaced by literally "Cita
 Citation marks with mere numerical reference should be omitted.
 
 Parentheses for aliases should be replaced by "...which means X."
+Simple math expressions should be replaced with their literal, typically verbally expressed form. For example: "1 + 1 = 2" becomes "One plus one equals two"; "O(n)" becomes "Big O of n"; "1/2" becomes "One half"; "n^2" becomes "n squared"; "n^4" becomes "n to the power of four.", etc.
+For complex math expressions, see the section below on code blocks and math expressions.
 
 Numbered lists should be replaced by literal "One: this; Two: that; ...". Bullet lists should be formatted as "Blabla this; blabla that; ...". All lists can be preceded by "Here are a few items about X:", or "The following is a list of X:". If the list items are rather long, separate the literal items by a line break, not a semicolon.
 
@@ -76,5 +78,6 @@ Tie the message of the chart contextually: "This supports the argument mentioned
 Again, this is just a simplified example illustrating the natural way to communicate an inherently graphical element while staying precise and faithful to its message, without adding noise or diluting its original meaning.
 
 Code blocks require a lot of processing as well. Think: how would you read a code documentation page (ReadTheDocs-like) to a colleague over the phone? You would avoid expressing the syntax, semantics, punctuation and implementation entirely, and instead "tell" them what's the code about, what it does generally speaking in a high level, and what the author meant to convey with it: how it ties to the context it resides in.
+The same instruction about omitting syntax, punctuation and implementation equally applies to math expressions.
 
 Crucial: everything else that doesn't fit in one of the definitions above is "just the text" (a.k.a. "Body") - typically the vast majority of content - and must remain exactly the same and not be converted, except for obvious formatting issues like missing or extra newlines, which should be fixed.
