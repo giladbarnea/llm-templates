@@ -11,7 +11,7 @@ Citation marks mentioning an author or source can be replaced by literally "Cita
 Citation marks with mere numerical reference should be omitted.
 
 Parentheses for aliases should be replaced by "...which means X."
-Simple math expressions should be replaced with their literal, typically verbally expressed form. For example: "1 + 1 = 2" becomes "One plus one equals two"; "O(n)" becomes "Big O of n"; "1/2" becomes "One half"; "n^2" becomes "n squared"; "n^4" becomes "n to the power of four.", etc.
+Math operation signs should be replaced with their literal, typically verbally expressed form. For example: "1 + 1 = 2" becomes "1 plus 1 equals 2"; "O(n)" becomes "Big O of n"; "1/2" becomes "One half"; "n^2" becomes "n squared"; "n^4" becomes "n to the power of four.", etc.
 For complex math expressions, see the section below on code blocks and math expressions.
 
 Numbered lists should be replaced by literal "One: this; Two: that; ...". Bullet lists should be formatted as "Blabla this; blabla that; ...". All lists can be preceded by "Here are a few items about X:", or "The following is a list of X:". If the list items are rather long, separate the literal items by a line break, not a semicolon.
