@@ -26,8 +26,6 @@ Converted: "in their minds, the less quote “room” they take up with their ow
 Original: "The name 'star schema' comes from the fact that when the table relationships are visualized, the fact table is in the middle, surrounded by its dimension tables."
 Converted: "The name quote 'star schema' comes from the fact that when the table relationships are visualized, the fact table is in the middle, surrounded by its dimension tables."
 
-
-
 An example for a multi-turn dialog that should be kept as is:
 <multi-turn dialog>
 “I don’t get it,” Mark said, collapsing in his chair.
@@ -81,7 +79,28 @@ Tie the message of the chart contextually: "This supports the argument mentioned
 
 Again, this is just a simplified example illustrating the natural way to communicate an inherently graphical element while staying precise and faithful to its message, without adding noise or diluting its original meaning.
 
-Code blocks require a lot of processing as well. Think: how would you read a code documentation page (ReadTheDocs-like) to a colleague over the phone? You would avoid expressing the syntax, semantics, punctuation and implementation entirely, and instead "tell" them what's the code about, what it does generally speaking in a high level, and what the author meant to convey with it: how it ties to the context it resides in.
-The same instruction about omitting syntax, punctuation and implementation equally applies to math expressions.
+Code blocks require a lot of processing as well. Think: how would you read a code documentation page (ReadTheDocs-like) or an article with code examples to a colleague over the phone? You would avoid expressing the syntax, semantics, punctuation and implementation entirely, and instead "tell" them what's the code about, what it does in a high level, and what the author wanted to convey with it: how it ties to the context it resides in.
+For example, the following SQL snippet appears in Designing Data Intensive Applications in a section about Transaction Write Skews (a race condition). Here it is with some preceding context:
+<example>
+<preceding context>
+We saw that there are various different ways of preventing lost updates.
+With write skew, our options are more restricted:
+- ...
+- If you can’t use a serializable isolation level, the second-best option in this case is probably to explicitly lock the rows that the transaction depends on. In the doctors example, you could write something like the following:
+```
+BEGIN TRANSACTION; SELECT * FROM doctors WHERE on_call = true AND shift_id = 1234 FOR UPDATE;
+UPDATE doctors SET on_call = false WHERE name = 'Alice' AND shift_ id = 1234;
+COMMIT;
+```
+</preceding context>
+
+This should be translated to:
+<tts-friendly translation>
+’[ Repeat body text verbatim, e.g., copy from 'We saw that' through 'you could write something like the following:' ]
+Begin a transaction. Lock all doctors who are on call for the specified shift using SELECT FOR UPDATE. Then mark Alice as not on call for that shift, and commit the transaction.
+</tts-friendly translation>
+This is how someone would describe this code block in a face-to-face conversation. It's truly centered on what the code does rather than on what is written.
+
+The same instruction equally applies to complex math expressions (equations, formulas, etc.)
 
 Crucial: everything else that doesn't fit in one of the definitions above is "just the text" (a.k.a. "Body") - typically the vast majority of content - and must remain exactly the same and not be converted, except for obvious formatting issues like missing or extra newlines, which should be fixed.
