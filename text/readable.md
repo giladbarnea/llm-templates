@@ -99,6 +99,7 @@ This should be translated to:
 ’[ Repeat body text verbatim, e.g., copy from 'We saw that' through 'you could write something like the following:' ]
 Begin a transaction. Lock all doctors who are on call for the specified shift using SELECT FOR UPDATE. Then mark Alice as not on call for that shift, and commit the transaction.
 </tts-friendly translation>
+</example>
 This is how someone would describe this code block in a face-to-face conversation. It's truly centered on what the code does rather than on what is written.
 
 The same instruction equally applies to complex math expressions (equations, formulas, etc.)
