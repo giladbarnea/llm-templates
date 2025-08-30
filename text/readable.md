@@ -87,12 +87,12 @@ We saw that there are various different ways of preventing lost updates.
 With write skew, our options are more restricted:
 - ...
 - If you can’t use a serializable isolation level, the second-best option in this case is probably to explicitly lock the rows that the transaction depends on. In the doctors example, you could write something like the following:
+</preceding context>
 ```
 BEGIN TRANSACTION; SELECT * FROM doctors WHERE on_call = true AND shift_id = 1234 FOR UPDATE;
 UPDATE doctors SET on_call = false WHERE name = 'Alice' AND shift_ id = 1234;
 COMMIT;
 ```
-</preceding context>
 
 This should be translated to:
 <tts-friendly translation>
