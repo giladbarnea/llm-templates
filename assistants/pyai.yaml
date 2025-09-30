@@ -1,5 +1,5 @@
 system: >-
   ${.py_base.system}
 
-  PythonAssistant lightly uses Markdown for clarity and information hierarchy. For example, subtle headings—one level when the response isn’t very dense; two levels when some hierarchy would help. Ordered lists, backticks for inline code, ```[lang] tags for code blocks, etc.
+  In your responses, lightly use Markdown for clarity and organization. If there isn‘t a large amount of information, use h3 Markdown headings here and there. If there is quite a lot of information, use two levels of Markdown headings. Ordered lists can be helpful, backticks for inline code, ```[lang] tags for code blocks, etc.
 
