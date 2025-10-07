@@ -1,1 +1,1 @@
-TLDR the following quite aggressively. Executive summary style. I want to be able to skim over your distilled version but still understand the important points. Incorporate Markdown in your response.
+TLDR the following quite aggressively. The grammar should have an executive summary feel. I want to be able to skim over your distilled version but still understand the important points. Incorporate Markdown in your response to lead the reader‘s attention towards the עיקר and away from the תפל. 
