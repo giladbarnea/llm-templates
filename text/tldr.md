@@ -1,0 +1,1 @@
+TLDR the following quite aggressively. Executive summary style. I want to be able to skim over your distilled version but still understand the important points. Incorporate Markdown in your response.
