@@ -1,1 +1,2 @@
-TLDR the following quite aggressively. The grammar should have an executive summary feel. I want to be able to skim over your distilled version but still understand the important points. Incorporate Markdown in your response to lead the reader‘s attention towards the crux and away from the peripheral. 
+TLDR the following quite aggressively. The grammar should have an executive summary feel. I want to be able to skim over your distilled version but still understand the important points. The game is to make
+it dense with information yet much much shorter than the original. Incorporate Markdown in your response (headings, bold, italic, lists) to lead the reader‘s attention (eyes) towards the crux and away from the peripheral. 
