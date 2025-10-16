@@ -1,6 +1,0 @@
-chat_template:
-  - There are 3 participants in this meeting recording. The conversation is in Hebrew. One of them (Guy) has a lot of knowledge and mainly gives advice. The other two, Tomer and Gilad, mainly describe their current situation to get his advice. Tomer first, then Gilad.
-    Transcribe the meeting in a coherent and internally consistent manner.
-  - ... # Assistant's response
-  - Clean the transcript out and format it like it would be if it written in a book. use the same words and phrases, just format it so it would be natural to read.
-  
