@@ -76,3 +76,67 @@ matt_might_bad_writing_rules: |-
 
   Bad:    We offer a completely different formulation of CFA.
   Better: We offer a different formulation of CFA.
+
+anthropic_doc_effective_writing: |-
+You’re right that this documentation exemplifies clear communication, and those principles do transcend domains. Let me break down the key elements:
+
+## Core Principles of Clear Communication
+
+**Cognitive Load Management**
+This is perhaps the most important concept. Good writing minimizes the mental effort required to extract meaning. The Claude Code doc does this through:
+
+- Short sentences and paragraphs
+- Progressive disclosure (general concept first, details later)
+- Visual hierarchy using headers and bullet points strategically
+
+**Audience-Centered Design**
+The writing anticipates reader questions in the order they’ll arise:
+
+- “What is this?” → Definition
+- “Why should I care?” → Benefits
+- “How do I use it?” → Step-by-step instructions
+- “What if something goes wrong?” → Troubleshooting
+
+This is sometimes called the “inverted pyramid” in journalism, or “task-oriented writing” in technical communication.
+
+**Concreteness over Abstraction**
+Notice how quickly they move from concepts to specific numbers and actions:
+
+- Not just “usage limits” but “approximately 45 messages”
+- Not just “authenticate” but “log in with the same credentials you use for Claude”
+
+This principle is called **specificity** or **concreteness** in rhetoric. Abstract language forces readers to do translation work; concrete language does that work for them.
+
+## Writing Techniques in Action
+
+**Front-Loading**
+Each section leads with its most important information. The Max plan section starts with usage numbers, not subscription philosophy. This is related to the **topic sentence** concept from composition, but applied more aggressively.
+
+**Parallel Structure**
+Notice how the Pro and Max plan descriptions follow identical formats. This reduces cognitive load because readers can reuse the mental model they built for the first one. Rhetorically, this is called **parallelism** or **structural consistency**.
+
+**Operational Language**
+The doc uses verbs and actionable steps rather than states of being:
+
+- “Install Claude Code” not “Claude Code installation”
+- “Run claude update” not “Claude Code can be updated”
+
+This connects to the concept of **agency** in writing—making the reader the active subject who does things, rather than a passive recipient of information.
+
+**Signposting**
+Explicit markers like “Important:”, numbered lists, and section headers act as navigational aids. This is called **meta-discourse** in linguistics—language that talks about the structure of the text itself.
+
+**Constraint Acknowledgment**
+The doc doesn’t hide limitations. It clearly states when you’ll hit limits and what happens next. This is part of **transparency** in communication, which builds trust and prevents reader frustration.
+
+## Domain-Spanning Relevance
+
+You’re absolutely right that these principles apply everywhere:
+
+- **Political speeches**: Front-load the message, use concrete examples (stories of individual voters), parallel structure in repeated phrases (“I have a dream…”)
+- **Academic textbooks**: Progressive disclosure (overview → detailed explanation), operational language in problems and exercises
+- **Fiction**: Cognitive load management through pacing, concrete sensory details over abstract emotions
+
+The Claude Code documentation succeeds because it respects your attention, anticipates your needs, and never makes you work harder than necessary to understand. That’s the essence of clarity across any domain.
+
+What aspects resonate most with your own communication challenges—whether in documentation, explaining technical concepts to Ami, or something else?​​​​​​​​​​​​​​​​
