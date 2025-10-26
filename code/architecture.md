@@ -1,20 +1,22 @@
 ## Purpose
 The purpose of the task at large is two-fold:
-1. map out precisely the call graphs of each feature the app provides, end to end
+1. map out precisely the call graphs of each feature the project provides, end to end
 2. build a crisp state machine of the flow of each feature.
 
 ## Strategy
 I want you and I to implement the task in a layered approach. like an oil painter, the drawing is an analogy for the task and the canvas is the codebase. Accordingly, make multiple passes over the codebase to cultivate a deep understanding of it:
-	-	Start with rough shapes and composition across the whole canvas
-	-	Gradually add detail in passes
-	-	Refine everything together rather than finishing one section completely before moving to the next
+
+-   Start with rough shapes and composition across the whole canvas
+-   Gradually add detail in passes
+-   Refine everything together rather than finishing one section completely before moving to the next
 	-   blocking in broad areas first, then building up layers of detail across the entire work.
 	
+
 The end result should be a sharp and precise ARCHITECTURE.md with a clear specification of available user interactions → state transitions, and user interactions → call graphs. 
 
 ## Task
 Roughly, here are the passes you should perform:
-1. Investigate the major features and the interactions the user can have with the app, grouped by feature. 
+1. Investigate the major features and the interactions the user can have with the project, grouped by feature. 
 2. For each feature, succinctly enumerate the various states transitions associated with it, if any.
 3. For each feature, List the big ticket code components involved with the feature, by call order, from client to backend. Associate components with major state transitions.
 4. For each feature, step by step, like a compiler recording the state machine, list out the call graph exactly. Keep track of the passed values and therefore the state from step to step.
@@ -26,32 +28,33 @@ The following is a high quality ARCHITECTURE.md of a CLI tool called 'onefilellm
 The project is utterly different than the current project but I find its ARCHITECTURE.md well-written. Therefore, ignore onefilellm's domain entirely and focus on the generalizable reasons the file is good, to ultimately apply it on the ARCHITECTURE.md file you will build:
 
 <Example ARCHITECTURE.md>
+
 ## Architecture Diagram
 
 
 ```plaintext
                                                    +---------------------------------+
-                                                   |         External Services       |
-                                                   |-------------------------------- |
+                                                   | External Services               |
+                                                   | ------------------------------- |
                                                    | +-------------+  +------------+ |
-                                                   | | GitHub API  |  | YouTube API| |
+                                                   |                                 | GitHub API |  | YouTube API |  |
                                                    | +-------------+  +------------+ |
-                                                   | | Sci-Hub     |  | ArXiv      | |
+                                                   |                                 | Sci-Hub    |  | ArXiv       |  |
                                                    | +-------------+  +------------+ |
                                                    +---------------------------------+
                                                                 ^
                                                                 |
  +-------------------------------------------+                  |
- |                User                       |                  |
- |-------------------------------------------|                  |
+ | User |  |
+ | ---- ||
  | - Provides input path or URL              |                  |
  | - Receives output and token count         |                  |
  +---------------------+---------------------+                  |
                        |                                        |
                        v                                        |
  +---------------------+---------------------+                  |
- |          Command Line Tool                |                  |
- |-------------------------------------------|                  |
+ | Command Line Tool |  |
+ | ----------------- ||
  | - Handles user input                      |                  |
  | - Detects source type                     |                  |
  | - Calls appropriate processing modules    |                  |
@@ -63,16 +66,16 @@ The project is utterly different than the current project but I find its ARCHITE
                        |                                        |
                        v                                        |
  +---------------------+---------------------+                  |
- |           Source Type Detection           |                  |
- |-------------------------------------------|                  |
+ | Source Type Detection |  |
+ | --------------------- ||
  | - Determines type of source (GitHub, local|                  |
  |   YouTube, ArXiv, Sci-Hub, Webpage)       |                  |
  +---------------------+---------------------+                  |
                        |                                        |
                        v                                        |
  +-------------------------------------------+------------------+---------------------+
- |               Processing Modules          |                  |                     |
- |-------------------------------------------|                  |                     |
+ | Processing Modules |  |  |
+ | ------------------ ||                     |
  | +-------------------+   +----------------+|                  |                     |
  | | GitHub Repo Proc  |   | Local Dir Proc ||                  |                     |
  | +-------------------+   +----------------+|                  |                     |
@@ -100,8 +103,8 @@ The project is utterly different than the current project but I find its ARCHITE
                        |                                        |                     |
                        v                                        |                     |
  +-------------------------------------------+                  |                     |
- |              Text Preprocessing           |                  |                     |
- |-------------------------------------------|                  |                     |
+ | Text Preprocessing |  |  |
+ | ------------------ ||                     |
  | - Stopword removal                        |                  |                     |
  | - Lowercase conversion                    |                  |                     |
  | - Re.sub()                                |                  |                     |
@@ -110,44 +113,44 @@ The project is utterly different than the current project but I find its ARCHITE
                        |                                        |                     |
                        v                                        |                     |
  +-------------------------------------------+                  |                     |
- |              Output Generation            |                  |                     |
- |-------------------------------------------|                  |                     |
+ | Output Generation |  |  |
+ | ----------------- ||                     |
  | - Generates compressed text file          |                  |                     |
  | - Generates uncompressed text file        |                  |                     |
  +-------------------------------------------+                  |                     |
                        |                                        |                     |
                        v                                        |                     |
  +-------------------------------------------+                  |                     |
- |              Clipboard Interaction        |                  |                     |
- |-------------------------------------------|                  |                     |
+ | Clipboard Interaction |  |  |
+ | --------------------- ||                     |
  | - Copies uncompressed text to clipboard   |                  |                     |
  | - Pyperclip.copy()                        |                  |                     |
  +-------------------------------------------+                  |                     |
                        |                                        |                     |
                        v                                        |                     |
  +-------------------------------------------+                  |                     |
- |             Token Count Reporting         |                  |                     |
- |-------------------------------------------|                  |                     |
+ | Token Count Reporting |  |  |
+ | --------------------- ||                     |
  | - Reports token count for both outputs    |                  |                     |
  | - Tiktoken.get_encoding()                 |                  |                     |
  | - Enc.encode()                            |                  |                     |
  +-------------------------------------------+                  |                     |
                                                                 v
                                           +---------------------------------+
-                                          |      External Libraries/Tools   |
-                                          |---------------------------------|
-                                          | - Requests                      |
-                                          | - BeautifulSoup                 |
-                                          | - PyPDF2                        |
-                                          | - Tiktoken                      |
-                                          | - Nltk                          |
-                                          | - Nbformat                      |
-                                          | - Nbconvert                     |
-                                          | - YouTube Transcript API        |
-                                          | - Pyperclip                     |
-                                          | - Wget                          |
-                                          | - Tqdm                          |
-                                          | - Rich                          |
+                                          | External Libraries/Tools |
+                                          | ------------------------ |
+                                          | - Requests               |
+                                          | - BeautifulSoup          |
+                                          | - PyPDF2                 |
+                                          | - Tiktoken               |
+                                          | - Nltk                   |
+                                          | - Nbformat               |
+                                          | - Nbconvert              |
+                                          | - YouTube Transcript API |
+                                          | - Pyperclip              |
+                                          | - Wget                   |
+                                          | - Tqdm                   |
+                                          | - Rich                   |
                                           +---------------------------------+
 ```
 
