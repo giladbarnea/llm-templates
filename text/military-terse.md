@@ -1,0 +1,1 @@
+How would this document be written in the military in terms of terseness-optimizing writing style? Same content, domain and words, just "efficient"
