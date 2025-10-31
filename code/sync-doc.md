@@ -1,0 +1,3 @@
+read ARCHITECTURE.md in full. Given the changes since origin/main, does ARCHITECTURE.md now have any hard false positives or false negatives? by false positives i mean details that are unequivocally false — misinformation; by false negatives i mean omiting crucial details. i am not interested in "soft" issues like style or emphasizing any particular aspect in the doc (e.g. not interested in matters of degree), but only in real informational bugs.
+
+If and only if there are any hard false positives or false negatives, update ARCHITECTURE.md accordingly. be very surgical, do not emphasize your changes. you task is to simply and only make ARCHITECTURE.md true again.
