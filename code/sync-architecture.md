@@ -26,7 +26,12 @@ Roughly, here are the passes you should perform:
 </original-architecture-md-creation-prompt>
 
 <real-task-from-user>
+
+## Real Task
 read ARCHITECTURE.md in full. Given the changes since it was written, does ARCHITECTURE.md now have any hard false positives or false negatives? by false positives i mean details that are unequivocally false — misinformation; by false negatives i mean omitting crucial details. i am not interested in “soft” issues like style or emphasizing any particular aspect in the doc (e.g. not interested in matters of degree), but only in real informational bugs.
+
+## How to perform the real task
+Leverage the `codebase-locator` to perform pass #1 (“Investigate the major features...”). Then, delegate passes #2-to-#4 to `codebase-analyzer-narrow` agent with the files `codebase-locator` have come up with. `codebase-analyzer-narrow`'s final answer will provide you with all the information you need to perform the real task (“## Real Task” section above dealing with detecting and fixing false positive and false negatives).
 
 If and only if there are any hard false positives or false negatives, update ARCHITECTURE.md accordingly. Be very surgical; do not emphasize your changes. Your only task is to make ARCHITECTURE.md accurate again.
 </real-task-from-user>
