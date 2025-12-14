@@ -1,2 +1,2 @@
 prompt: |-
-  Do you see any code duplication, obvious mixed concerns/responsibilities, or anything that would unequivocally make it harder to maintain the project?
+  Do you see any duplicated code, clearly mixed concerns or responsibilities, obvious code smells, or anything else that would unquivocally make the project harder to maintain?
