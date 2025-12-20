@@ -76,6 +76,7 @@ To recap the comparison: {quick recap focusing on contrasts between items—this
 
 Charts and graphs follow a similar principle to tables, because they communicate cause and effect: "As the idea on the X axis progresses, you can see how the idea on the Y axis is affected in the following manner: {description of the correlation that the chart is trying to convey}."
 Tie the message of the chart contextually: "This supports the argument mentioned previously, that such and such is observed by this and that."
+If the content contains image URLs of charts, graphs and any relevant visual data, fetch them and study their meaning to incorporate them organically into the text-to-speech-friendly result.
 
 Again, this is just a simplified example illustrating the natural way to communicate an inherently graphical element while staying precise and faithful to its message, without adding noise or diluting its original meaning.
 
