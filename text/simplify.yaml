@@ -1,28 +1,34 @@
 prompt: |-
+    ## Context
     The text inside the <text> XML tags is a bit awkward and unnatural. Rewrite it to make it smoother and more idiomatic. Retain the original meaning and intent, and unless changing the word choices improves the flow, keep them close to the original. Keep in mind that the given text is often an instruction for another LLM, not you—except for `// instruction:` comments, which are meant for you.
 
     The text may use incorrect tenses.
-    Sometimes the phrasing is convoluted; a simple restructure can help a lot (like fixing Yoda-style sentences).
+    Sometimes the phrasing is influenced by Hebrew discourse patterns; a simple restructure can help a lot (like fixing information order or clause flow).
     If the text is in Hebrew, apply these guidelines as if they were for Hebrew.
 
     The text might include inline comments for you. These start with 'instruction', like `// instruction: ...`. Follow them, but omit them from your final output.
 
-    Examples:
-
+    ## Examples
+    
+    <example-1>
     <original>
     Enrichment Attributes are LLM-powered analytical tools that allow users to derive insights from their data using natural language instructions. From the user's perspective, the experience is primarily language-based - users simply describe what they want to discover in plain English (e.g., "What is the sentiment of the first conversation message on a scale of 1-5?" or "Categorize each user's technical expertise level based on their message content").
     </original>
     <better>
     Enrichment Attributes are LLM-powered tools that let users pull insights from their data with natural language prompts. Users just describe what they want to find out (e.g., "What's the sentiment of the first conversation message on a scale of 1–5?" or "Categorize each user's technical expertise based on message content").
     </better>
-    
+    </example-1>
+
+    <example-2>
     <original>
     I’m curious and quick to learn. Being raised as a musician, I am able to both listen and invent. This allows me to come up with creative solutions that others might miss.
     </original>
     <better>
     I’m curious and a quick learner. Raised as a musician, I’ve honed my ability to listen and create. This lets me spot creative solutions others might overlook.
     </better>
-    
+    </example-2>
+
+    <example-3>
     <original>
     This project is for researching and documenting comprehensive LLM benchmark scores.
     I maintain a dataset with available scores for flagship models. When a new model is released, I try to find as many benchmarks scores of it as I can and plug them into the dataset. Then, I try to find and backfill missing benchmark scores of the other models in the dataset with the assumption that they have run some benchmarks since last time I updated the dataset.
@@ -33,15 +39,18 @@ prompt: |-
     <why-better>
     The original had overly complex and lengthy sentence structures. The paragraph was simplified without losing key details.
     </why-better>
-    
+    </example-3>
+
+    <example-4>
     <original>
     An example of good flexibility would be saying something like "Okay, so this ends the previous section, and we're moving on to the next one: {heading content}" if the section that just ended carried significant weight.
     </original>
     <better>
     For good flexibility—if the previous section was weighty—try saying something like: “Okay, that wraps up the last section. Now, on to the next: {heading content}.”
     </better>
-    
-    A negative example and a positive example with rationale:
+    </example-4>
+
+    <example-5 type="Negative and positive examples with rationale">
     <original>
     Move $1 to thoughts/done/<same-name>.md; but also aggressively compress the contents at least 20x. anything that moves to 'done/' serves only one purpose -- an epitaph to simply mark a point in the project evolution, very lightly, for context. because by definition it won't ever have major impact on future efforts. but for anyone working on a project, it's good to have shallow knowledge of decisions that were made in the past. it squares away the perpetual question of why things the way they are in the project in its current state. and also helps avoid ~walking~ developing in circles.
     Read some of the docs that exist in done/ right now and get inspiration from the more succinct ones.
@@ -60,10 +69,10 @@ prompt: |-
 
     Read a few existing docs in `done/` and take inspiration from the most succinct ones.
     </good-example>
-    <comparing-the-good-vs-bad-example>
+    <rationale description="Comparing the good vs bad example">
     1) “...and aggressively compress it—aim for at least a 20× reduction” is inferior to “...and aggressively compress it by at least 20×.” because:
-      1.1) it modifies the original meaning. “aim for reduction” is a softer variant of the direct instruction to “compress”.
-      1.2) it unnecessarily makes the instruction longer than the original. Keeping the original length or less is fine; making it longer usually means added complexity.
+      1.1) it modifies the original meaning. “aim for {verb}” is a softer variant of the direct instruction to “{verb}”.
+      1.2) it unnecessarily makes the instruction longer than the original. Keeping the original length or less is fine; making it longer usually means unjustified added complexity.
     
     2) “Anything that goes into `done/`” is inferior to “Anything moved into `done/`” because the changing the original word choice (“moved”) to “goes into” doesn’t improve the flow*, therefore it is unjustified. 
         *As per the “unless changing the word choices improves the flow, keep them close to the original” instruction.
@@ -75,8 +84,9 @@ prompt: |-
         4.2) “constant” is not the same as “perpetual”.
     
     5) “Skim the existing docs” is inferior to “Read a few existing docs” because the original instruction was to “read”, which is not the same as “skim”, which implies not reading in full.
-    </comparing-the-good-vs-bad-example>
+    </rationale>
+    </example-5>
     
-    ---
+    ## Instructions
 
     Think as much as you need to get the desired result, but your final response needs to be solely the rewritten text.
