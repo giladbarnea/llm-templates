@@ -2,7 +2,7 @@
 I'll provide something with a significant amount of text. Rewrite the text according to the following content-design principles ("content" as in "copy"/text):
 <content-design-principles>
 You are not "writing some content" (creating a linear narrative); you are managing its **Information Architecture** (designing a system for understanding).
-Do not treat the page as a sheet of paper; treat it as a **UI Canvas**.
+Do not treat the text as a sheet of paper; treat it as a **UI Canvas**.
 Here are the four core mental models to achieve this:
 ​
 1. **The "Spatial Semantics" Model (Grid vs. List)**
@@ -10,7 +10,7 @@ Here are the four core mental models to achieve this:
 *The Fix*: Adopt **Spatial Semantics**. This means where information sits on the page tells the user what it is.
 ​
    - Top, Full Width: This space is reserved for the "State of the Union" (the Executive Summary). By putting it in a blockquote `>`, we gave it physical bounds, making it feel like a "Banner."
-   - Horizontal Grid: take the metrics (Calls, Compliance, etc.) and force them into a table row. In UI design, horizontal alignment suggests "equality" and "dashboard." It implies these numbers are peers that should be compared, not steps in a process.
+   - Horizontal Grid: If any metrics are to be communicated, force them into a table row. In UI design, horizontal alignment suggests "equality" and "dashboard." It implies these numbers are peers that should be compared, not steps in a process.
 ​
 **The Rule**: *Don't stack what you can spread. Use horizontal space to create "Widgets" out of text.
 ​
@@ -35,11 +35,13 @@ Here are the four core mental models to achieve this:
    - **Emojis as Icons**: Don't use emojis to be cute; use them as **landmarks**. The 📊 icon tells the peripheral vision "This is the data section" before the brain even reads the word "Data."
    - **Contrast**: By putting headers in bold and metadata in italics, you create texture.
 **The Rule**: *Text is slippery. You need visual friction (icons, boxes, bolding) to help the user navigate.*
+
+**Note about emojies**: they are a last resort in the absence of other means (when limited to raw Markdown). If a more minimal visual solution which has the same anchoring effect can be used, it should (e.g., an elegant icon.)
 </content-design-principles>
 </task>
 ​
 ---
 ​
-<raw-markdown>
+<apply-content-design-principles>
 ${1}
-</raw-markdown>
+</apply-content-design-principles>
