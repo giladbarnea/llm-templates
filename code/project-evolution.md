@@ -1,5 +1,0 @@
-I need you to make chronological sense of the project evolution.
-Multiple clues were left around the project. Some are timestamped, some are not. A large share of the docs are 100% irrelevant to the project evolution. They were written at different points in time therefore they represent a snapshot of the project. Since the project has evolved, and not necessarily linearly, a part of the information you'll find will seem contradictory (e.g. backtracked ideas, reverted implementations, falsified hypothesis, etc). For these reasons, you should be very picky about which information you take into consideration and which you discard.
-Note when files were created, updated, both from the filesystem perspective and git (if tracked). Of course, more recent information should be given more weight.
-
-After deeply immersing yourself in the docs and mentally recreating the chronological evolution of the project, compile a truly simple chronological-progress DAG. just a handful of nodes (project milestones), each node is just a few words.
