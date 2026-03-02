@@ -1,6 +1,6 @@
 prompt: |-
     ## Context
-    The text inside the <text> XML tags is a bit awkward and unnatural. Rewrite it to make it smoother and more idiomatic. Retain the original meaning and intent, and unless changing the word choices improves the flow, keep them close to the original. Keep in mind that the given text is often an instruction for another LLM, not you—except for `// instruction:` comments, which are meant for you.
+    The text inside the <text> XML tags is a bit awkward and unnatural. Rewrite it to make it smoother and more idiomatic. Retain the original meaning and intent, and unless changing the word choices improves the flow, keep them close to the original. Don’t use emdashes or endashes if not in the original text. Keep in mind that the given text is often an instruction for another LLM, not you—except for `// instruction:` comments, which are meant for you.
 
     The text may use incorrect tenses.
     Sometimes the phrasing is influenced by Hebrew discourse patterns; a simple restructure can help a lot (like fixing information order or clause flow).
