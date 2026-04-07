@@ -6,6 +6,7 @@ description: This skill should be used when running interactive CLI programs tha
 # Run Interactive
 
 Run interactive CLI processes that prompt for user input.
+The `scripts/driver.py` workflow below is the default approach, but it does not fit every interactive use case. In particular, workflows that depend on driving a live shell incrementally via a PTY, such as probing shell-completion behavior with literal Tab presses, may be better served by the reference example at `references/pty_completion_demo.zsh`.
 
 ## When to Use
 
@@ -120,3 +121,4 @@ printf '\x1b[B\x1b[B\n' > /tmp/interactive_<id>.in
 - `[AWAIT]` detection is heuristic on macOS (output stopped + process sleeping)
 - Empty responses are valid (just press enter): `printf '\n' > /tmp/interactive_<id>.in`
 - For passwords, the response won't echo in `[OUT]` (normal TTY behavior)
+- If the driver model is too restrictive for the task, check `references/pty_completion_demo.zsh` for a direct PTY-driven pattern
