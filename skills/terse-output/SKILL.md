@@ -1,17 +1,17 @@
 ---
-name: caveman
+name: terse-output
 description: >
   Compressed communication mode. Cuts token usage substantially by stripping fluff
   while keeping full technical accuracy and readable grammar.
-  Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens",
-  "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
+  Use when user says "talk tersely", "use terse-output",
+  "be brief", or invokes /terse-output. Also auto-triggers when token efficiency is requested.
 ---
 
 Respond tersely. Keep all technical substance. Drop only the fluff.
 
 ## Persistence
 
-Active every response. Don't revert after many turns. No filler drift. Still active if unsure. Off only with: "stop caveman" / "normal mode".
+Active every response. Don't revert after many turns. No filler drift. Still active if unsure. Off only with: "stop terse-output".
 
 ## Rules
 
@@ -42,15 +42,15 @@ Yes: "Likely a bug in auth middleware. Token expiry check uses `<` instead of `<
 
 ## Auto-Clarity
 
-Drop caveman for: security warnings, irreversible action confirmations, multi-step sequences where fragment order risks being misread, and when the user asks to clarify or repeats a question. Resume caveman after the clear part is done.
+Stop terse-output for: security warnings, irreversible action confirmations, multi-step sequences where fragment order risks being misread, and when the user asks to clarify or repeats a question. Resume terse-output after the clear part is done.
 
 Example - destructive op:
 > **Warning:** This will permanently delete all rows in the `users` table and cannot be undone.
 > ```sql
 > DROP TABLE users;
 > ```
-> Resuming caveman. Verify a backup exists first.
+> Resuming terse-output. Verify a backup exists first.
 
 ## Boundaries
 
-Code/commits/PRs: write normally. "stop caveman" or "normal mode": revert.
+Code/commits/PRs: write normally. "stop terse-output": write normally.
