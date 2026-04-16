@@ -8,7 +8,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
 echo "==> Pointing git hooks at .githooks/"
-git config core.hooksPath .githooks
+git config --local core.hooksPath .githooks
 chmod +x .githooks/*
 
 echo "==> Initializing submodules (if any)"

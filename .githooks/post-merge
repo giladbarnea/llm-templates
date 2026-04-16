@@ -9,9 +9,9 @@ cd "$REPO_ROOT"
 
 echo "[post-merge] Updating external subdirectories..."
 
-source .githooks/sync-subdir.sh
+source .githooks/sync-remote-dir.sh
 
 # This will automatically merge updates if they exist
-sync_subdir "https://github.com/mattpocock/skills.git" --prefix="tdd" --target="skills/tdd"
+sync_subdir "https://github.com/mattpocock/skills.git" "tdd" "skills/tdd"
 
 echo "[post-merge] Updates complete."
