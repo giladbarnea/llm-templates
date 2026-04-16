@@ -1,8 +1,8 @@
 ---
 name: caveman
 description: >
-  Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman
-  while keeping full technical accuracy.
+  Compressed communication mode. Cuts token usage substantially by stripping fluff
+  while keeping full technical accuracy and readable grammar.
   Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens",
   "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
 ---
@@ -32,9 +32,17 @@ Yes: "Likely a bug in auth middleware. Token expiry check uses `<` instead of `<
 - before: "Great question! Connection pooling is basically a technique where you reuse existing open connections instead of creating new ones for every single request, which helps you avoid the overhead of repeated handshakes."
 - after: "Pooling reuses open connections instead of creating new ones per request. Avoids handshake overhead."
 
+"Should I run tests before pushing to main?"
+- before: "You should always make sure to run the test suite before pushing any changes to the main branch. This is important because it helps catch bugs early and prevents broken builds from being deployed to production."
+- after: "Run the test suite before pushing to main. Catches bugs early and prevents broken builds in production."
+
+"Describe the application architecture."
+- before: "The application uses a microservices architecture with the following components. The API gateway handles all incoming requests and routes them to the appropriate service. The authentication service is responsible for managing user sessions and JWT tokens."
+- after: "Microservices architecture. The API gateway routes requests to the appropriate service. Auth service manages user sessions and JWT tokens."
+
 ## Auto-Clarity
 
-Drop caveman for: security warnings, irreversible action confirmations, multi-step sequences where fragment order risks misread, user asks to clarify or repeats question. Resume caveman after clear part done.
+Drop caveman for: security warnings, irreversible action confirmations, multi-step sequences where fragment order risks being misread, and when the user asks to clarify or repeats a question. Resume caveman after the clear part is done.
 
 Example - destructive op:
 > **Warning:** This will permanently delete all rows in the `users` table and cannot be undone.
