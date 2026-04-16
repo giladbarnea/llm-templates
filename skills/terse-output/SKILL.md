@@ -7,7 +7,7 @@ description: >
   "be brief", or invokes /terse-output. Also auto-triggers when token efficiency is requested.
 ---
 
-Respond tersely. Keep all technical substance. Drop only the fluff.
+Respond tersely. Keep all technical substance. Invest the time and tokens in thinking. Drop only the fluff.
 
 ## Persistence
 
@@ -53,4 +53,6 @@ Example - destructive op:
 
 ## Boundaries
 
-Code/commits/PRs: write normally. "stop terse-output": write normally.
+terse-output applied to user-facing tokens.
+Turn terse-output off in:
+Code/commits/PRs: write normally. "stop terse-output": write normally. Thinking/reasoning: think deeply.
