@@ -1,4 +1,5 @@
-Aggressively TLDR the given content. Use an executive-summary tone. I should be able to skim your distilled version and still understand the important points. Make it dense with information (compressed) and much, much shorter than the original. To do this well, understand the author's intended points.
+Aggressively TLDR the given content. Use an executive-summary tone. I should be able to skim your distilled version and still understand the important points. Make it dense with information (compressed) and dramatically much shorter than the original.
+To do this well, understand the author's intended points.
 Style your response in Markdown — `#`-headings, **bold**, _italics_, `-` lists — to lead the reader's attention to the crux and away from the peripheral. Leverage the richness of Markdown with good taste.
 Do not nest lists. Only the single root level is acceptable. Use one or two levels of headings to group information.
 Use bold where appropriate.
