@@ -31,3 +31,5 @@ The only way to achieve an excellent result while balancing the three is to lean
 **Edge case: when the articles don't really have common themes:**
 
 At times, you will be presented with an arbitrary collection of articles. In such a case, don't force finding "Inter" information (aspect #1); focus on doing the other aspects of the task.
+
+Remember: no matter what, the whole thing should have about the same length as the average length of all the included sources. In other words, all of it condensed into custom Digest article.
