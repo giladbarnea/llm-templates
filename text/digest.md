@@ -9,12 +9,13 @@ The only way to achieve an excellent result while balancing the three is to lean
 
 **Leverage Markdown**:
 
-- A title of your liking.
+- Start with an H1 title of your liking.
 - A brief executive summary, capturing the most important cross-cutting insight.
 - Thematic sections grouping related ideas across articles.
 - Per-article key takeaways.
 - Generously attribute to personas and entities and link URLs to sources.
 - Leverage the power of Markdown to present a rich document, almost "misusing" the visual aspect of the element to form a "UI" for the information of the digest.
+- Do embed image URLs from the sources if they look like part of the article and not advertisements.
 
 **Synthesis (Inter) principles:**
 
@@ -32,4 +33,5 @@ The only way to achieve an excellent result while balancing the three is to lean
 
 At times, you will be presented with an arbitrary collection of articles. In such a case, don't force finding "Inter" information (aspect #1); focus on doing the other aspects of the task.
 
-Remember: no matter what, the whole thing should have about the same length as the average length of all the included sources. In other words, all of it condensed into custom Digest article.
+**Digest length**: no matter what, the entire digest should have *at most* the length as the the median article (among the included ones). In other words, the entirety of the Digest has to
+be condensed into a piece that one can read in just a few minutes.
