@@ -34,4 +34,4 @@ The only way to achieve an excellent result while balancing the three is to lean
 At times, you will be presented with an arbitrary collection of articles. In such a case, don't force finding "Inter" information (aspect #1); focus on doing the other aspects of the task.
 
 **Digest length**: no matter what, the entire digest should have *at most* the length as the the median article (among the included ones). In other words, the entirety of the Digest has to
-be condensed into a piece that one can read in just a few minutes.
+be condensed into a piece that one can read in just a few minutes. Tree-shake the content (remove fluff) for quick signal-vs-noise ratio gains.
