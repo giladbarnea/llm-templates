@@ -1,124 +1,52 @@
 ---
 name: run-interactive
-description: This skill should be used when running interactive CLI programs that require user input (installation wizards, configuration scripts, prompts asking for y/n, passwords, names, etc.). Enables completing multi-step interactive processes that would otherwise block waiting for stdin.
+description: Run interactive CLI workflows (wizards, auth prompts, TUI menus) requiring stdin. Uses tmux for precise screen capture, state reading, and keystroke injection.
 ---
 
-# Run Interactive
+# run-interactive
 
-Run interactive CLI processes that prompt for user input.
-The `scripts/driver.py` workflow below is the default approach, but it does not fit every interactive use case. In particular, workflows that depend on driving a live shell incrementally via a PTY, such as probing shell-completion behavior with literal Tab presses, may be better served by the reference example at `references/pty_completion_demo.zsh`.
+Use `tmux` for interactive CLI processes (`npm init`, `aws configure`, passwords). `tmux` handles ANSI natively, supports full-screen TUIs, and prevents auto-closures.
 
-## When to Use
+## Primary Method: `tmux`
 
-- Installation wizards (e.g., `npm init`, `cargo init`, `pip install` with prompts)
-- Configuration scripts that ask questions
-- Any CLI that blocks waiting for stdin input
-- Multi-step interactive processes
+Launch background shell, inject commands, read pane state, send keystrokes.
 
-## Interface
-
-**Files created by the driver:**
-
-| File | Purpose |
-|------|---------|
-| `/tmp/interactive_<id>.log` | Read this — contains process output and signals |
-| `/tmp/interactive_<id>.in` | Write here — send input to the process |
-
-**Log format:**
-
-```
-[START] <command>    — Process started
-[PID] <n>            — Process ID
-[OUT] <line>         — Output from the process
-[AWAIT]              — Process is waiting for input (respond now)
-[SENT] <text>        — Input was sent to the process
-[EXIT:<code>]        — Process exited with code
-```
-
-## Workflow
-
-### 1. Start the driver in background
-
+### 1. Init
 ```bash
-python3 ~/.claude/skills/run-interactive/scripts/driver.py <session_id> <command> [args...] &
+S="wizard_1"
+tmux kill-session -t "$S" 2>/dev/null || true
+tmux new-session -d -s "$S" -c ./
+tmux send-keys -t "$S" "npm init" C-m
 ```
 
-Use a unique session ID (e.g., `npm_init_1`, `install_abc`).
-
-### 2. Read the log to see output
-
+### 2. Read State
 ```bash
-cat /tmp/interactive_<session_id>.log
+tmux capture-pane -t "$S" -p
 ```
+*Wait ~0.5s after input before capturing. Allows UI render.*
 
-### 3. When `[AWAIT]` appears, send a response
-
-Write the response to the input file (no trailing newline needed):
-
+### 3. Send Input
 ```bash
-echo -n "my response" > /tmp/interactive_<session_id>.in
+tmux send-keys -t "$S" "text_input" C-m  # string + Enter
+tmux send-keys -t "$S" C-m               # default (Empty Enter)
+tmux send-keys -t "$S" Up Down TAB       # Menu nav / Completion
+tmux send-keys -t "$S" C-c               # SIGINT (Cancel)
 ```
 
-Or use the Write tool to create `/tmp/interactive_<session_id>.in` with the response.
-
-### 4. Repeat steps 2-3 until `[EXIT:<code>]` appears
-
-## Example Session
-
-Running `npm init`:
-
+### 4. Verify & Cleanup
 ```bash
-# Start
-python3 ~/.claude/skills/run-interactive/scripts/driver.py npm1 npm init &
-
-# Check output
-cat /tmp/interactive_npm1.log
-# [START] npm init
-# [PID] 12345
-# [OUT] package name: (myproject)
-# [AWAIT]
-
-# Send response
-echo -n "my-package" > /tmp/interactive_npm1.in
-
-# Check again
-cat /tmp/interactive_npm1.log
-# ...
-# [SENT] my-package
-# [OUT] version: (1.0.0)
-# [AWAIT]
-
-# Continue until [EXIT:0]
+tmux send-keys -t "$S" "echo EXIT_CODE:\$?" C-m
+tmux capture-pane -t "$S" -p
+tmux kill-session -t "$S"
 ```
 
-## Special Keys
+---
 
-TTYs use byte sequences, not key events. Send these via the input file:
+## Fallback: `driver.py`
 
-| Key | Sequence | Bash |
-|-----|----------|------|
-| Enter | `\n` | `printf '\n'` |
-| Tab | `\t` | `printf '\t'` |
-| Up | `\x1b[A` | `printf '\x1b[A'` |
-| Down | `\x1b[B` | `printf '\x1b[B'` |
-| Right | `\x1b[C` | `printf '\x1b[C'` |
-| Left | `\x1b[D` | `printf '\x1b[D'` |
-| Ctrl+C | `\x03` | `printf '\x03'` |
-| Ctrl+D | `\x04` | `printf '\x04'` |
-| Backspace | `\x7f` | `printf '\x7f'` |
-| Escape | `\x1b` | `printf '\x1b'` |
+Use `scripts/driver.py` if `tmux` unavailable. Uses OS heuristics to log blocking states.
 
-**Combine sequences for menu navigation:**
-
-```bash
-# Down, Down, Enter (select third option)
-printf '\x1b[B\x1b[B\n' > /tmp/interactive_<id>.in
-```
-
-## Notes
-
-- The driver uses PTY, so the process behaves as if in a real terminal
-- `[AWAIT]` detection is heuristic on macOS (output stopped + process sleeping)
-- Empty responses are valid (just press enter): `printf '\n' > /tmp/interactive_<id>.in`
-- For passwords, the response won't echo in `[OUT]` (normal TTY behavior)
-- If the driver model is too restrictive for the task, check `references/pty_completion_demo.zsh` for a direct PTY-driven pattern
+1. **Start:** `python3 ${__dirname}/scripts/driver.py <id> <cmd> &`
+2. **Read log:** `cat /tmp/interactive_<id>.log` (Poll for `[AWAIT]`)
+3. **Send input:** `printf 'value\n' > /tmp/interactive_<id>.in`
+4. **Loop:** Repeat 2-3 until `[EXIT:code]`.
