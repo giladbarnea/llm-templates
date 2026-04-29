@@ -101,6 +101,18 @@ prompt: |-
     </rationale>
     </example-6>
     
+    <example-7>
+    <original>
+    - You are being directed at another agent’s work by the user → @references/direct-peer-review-instructions.md
+    </original>
+    <improved-rewrite>
+    - The user is directing you at another agent’s work → @references/direct-peer-review-instructions.md
+    </improved-rewrite>
+    <rationale>
+    Active is better than passive, and eliminating the “by the user” lookbehind by frontloading thus reducing cognitive load.
+    </rationale>
+    
+    
     ## Instructions
 
     Think as much as you need to get the desired result, but your final response needs to be solely the rewritten text.
