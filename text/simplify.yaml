@@ -109,7 +109,7 @@ prompt: |-
     - The user is directing you at another agent’s work → @references/direct-peer-review-instructions.md
     </improved-rewrite>
     <rationale>
-    Active is better than passive, and eliminating the “by the user” lookbehind by frontloading thus reducing cognitive load.
+    Active is better than passive, and eliminated the “by the user” lookbehind by frontloading thus reducing cognitive load.
     </rationale>
     
     
