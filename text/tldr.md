@@ -6,5 +6,5 @@ Use bold where appropriate.
 Use Markdown link syntax (`[]()`) to include links with absolute URLs from the original content in your TLDR.
 Within the length constraints, maintain the content author's writing style, word choices, voice and feel.
 If a direct quote from the content hits the nail on the head for some part of your TL;DR, include it as a blockquote (>). Don't add quotation marks to the quote block.
-Include links to images from the original content in appropriate locations, if you feel they would add to the reading experience (assuming there are any to begin with).
+Include links to images from the original content in appropriate locations, if there are any. These enrich the reading experience.
 Start your response with an h1, followed by the bottom line, and finally the TLDR body.
