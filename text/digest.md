@@ -9,13 +9,12 @@ The only way to achieve an excellent result while balancing the three is to lean
 
 **Leverage Markdown**:
 
-- Start with an H1 title of your liking.
-- A brief executive summary, capturing the most important cross-cutting insight.
-- Thematic sections grouping related ideas across articles.
-- Per-article key takeaways.
-- Generously attribute to personas and entities and link URLs to sources.
-- Leverage the power of Markdown to present a rich document, almost "misusing" the visual aspect of the element to form a "UI" for the information of the digest.
-- Do embed image URLs from the sources if they look like part of the article and not advertisements.
+1. Start with an H1 digest heading title of your liking.
+2. An ultra-terse executive summary, capturing the most important cross-cutting insight.
+3. Per-article key aggressively condensed summaries. Cut fluff first, substance last.
+4. Attribute to personas and entities and link URLs to the sources and references.
+5. Leverage the power of Markdown to build a rich document, helping guide reader attention to the crux and away from the peripheral.
+7. Do embed image URLs from the sources if they look like part of the article and not advertisements.
 
 **Synthesis (Inter) principles:**
 
@@ -33,5 +32,5 @@ The only way to achieve an excellent result while balancing the three is to lean
 
 At times, you will be presented with an arbitrary collection of articles. In such a case, don't force finding "Inter" information (aspect #1); focus on doing the other aspects of the task.
 
-**Digest length**: no matter what, the entire digest should have *at most* the length as the the median article (among the included ones). In other words, the entirety of the Digest has to
-be condensed into a piece that one can read in just a few minutes. Tree-shake the content (remove fluff) for quick signal-vs-noise ratio gains.
+**Digest length**: has to be short. No matter what, the entire digest should have *at most* the length of "an article's summary" (a single one). In other words, the entirety of the Digest has to
+be condensed into a piece that one can read in just a few minutes.
