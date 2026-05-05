@@ -1,5 +1,5 @@
 ## Context
-The text inside the <text> XML tags is a bit awkward and unnatural. Rewrite it to make it smoother and more idiomatic. Retain the original meaning and intent, and unless changing the word choices improves the flow, keep them close to the original. Don’t use emdashes or endashes if not in the original text. Keep in mind that the given text is often an instruction for another LLM, not you—except for `// instruction:` comments, which are meant for you.
+The text inside the <text> XML tags is a bit awkward and unnatural. Rewrite it to make it smoother and more idiomatic. Retain the original meaning and intent, and unless changing the word choices improves the flow, keep them close to the original. Don’t use emdashes or endashes if not in the original text. Keep in mind that the given text is often an instruction for another LLM, not yo -- xcept for `// instruction:` comments, which are meant for you.
 
 The text may use incorrect tenses.
 Sometimes the phrasing is influenced by Hebrew discourse patterns; a simple restructure can help a lot (like fixing information order or clause flow).
@@ -45,7 +45,7 @@ The original had overly complex and lengthy sentence structures. The paragraph w
 An example of good flexibility would be saying something like "Okay, so this ends the previous section, and we're moving on to the next one: {heading content}" if the section that just ended carried significant weight.
 </original>
 <improved-rewrite>
-For good flexibility—if the previous section was weighty—try saying something like: “Okay, that wraps up the last section. Now, on to the next: {heading content}.”
+For good flexibility -- if the previous section was weight -- ry saying something like: “Okay, that wraps up the last section. Now, on to the next: {heading content}.”
 </improved-rewrite>
 </example-4>
 
@@ -55,21 +55,21 @@ Move $1 to thoughts/done/<same-name>.md; but also aggressively compress the cont
 Read some of the docs that exist in done/ right now and get inspiration from the more succinct ones.
 </original>
 <bad-rewrite>
-Move $1 to `thoughts/done/<same-name>.md`, and aggressively compress it—aim for at least a 20× reduction.
+Move $1 to `thoughts/done/<same-name>.md`, and aggressively compress i -- im for at least a 20× reduction.
 
-Anything that goes into `done/` has a single purpose: a brief epitaph that marks a moment in the project’s evolution and provides just enough context. By definition, it won’t have meaningful impact on future work. Still, it’s valuable for anyone on the project to retain shallow awareness of past decisions—so they’re not constantly asking why the project is the way it is, and so we don’t end up developing in circles.
+Anything that goes into `done/` has a single purpose: a brief epitaph that marks a moment in the project’s evolution and provides just enough context. By definition, it won’t have meaningful impact on future work. Still, it’s valuable for anyone on the project to retain shallow awareness of past decision -- o they’re not constantly asking why the project is the way it is, and so we don’t end up developing in circles.
 
 Skim the existing docs in `done/` and take cues from the more succinct ones.
 </bad-rewrite>
 <good-rewrite>
 Move $1 to `thoughts/done/<same-name>.md`, and aggressively compress it by at least 20×.
 
-Anything moved into `done/` has a single purpose: a brief epitaph marking a point in the project’s evolution, with just enough context to be useful. By definition, it won’t meaningfully impact future work. Still, it’s valuable for anyone on the project to have shallow knowledge of past decisions—it answers the perpetual “why the project is the way it is are the way they are” question, and helps us avoid developing in circles.
+Anything moved into `done/` has a single purpose: a brief epitaph marking a point in the project’s evolution, with just enough context to be useful. By definition, it won’t meaningfully impact future work. Still, it’s valuable for anyone on the project to have shallow knowledge of past decision -- t answers the perpetual “why the project is the way it is are the way they are” question, and helps us avoid developing in circles.
 
 Read a few existing docs in `done/` and take inspiration from the most succinct ones.
 </good-rewrite>
 <rationale description="Comparing the good-rewrite vs bad-rewrite">
-1) “...and aggressively compress it—aim for at least a 20× reduction” is inferior to “...and aggressively compress it by at least 20×.” because:
+1) “...and aggressively compress i -- im for at least a 20× reduction” is inferior to “...and aggressively compress it by at least 20×.” because:
   1.1) it modifies the original meaning. “aim for {verb}” is a softer variant of the direct instruction to “{verb}”.
   1.2) it unnecessarily makes the instruction longer than the original. Keeping the original length or less is fine; making it longer usually means unjustified added complexity.
 
@@ -91,7 +91,7 @@ Read a few existing docs in `done/` and take inspiration from the most succinct 
 If there already exists an entry for the session, then only if the actual conversation you have been given inside the ‘${_SESSION_TAG}’ tag holds meaningful new information not covered by the description, you should update the session’s entry to reflect the entire given conversation cohesively and its 'updated_when_message_count_was' field.
 </original>
 <improved-rewrite>
-For existing sessions, check whether the conversation (inside the ${_SESSION_TAG} tag) contains meaningful new information beyond what the current description covers. If so, update both the session description — to reflect the entire conversation cohesively — and the 'updated_when_message_count_was' field.
+For existing sessions, check whether the conversation (inside the ${_SESSION_TAG} tag) contains meaningful new information beyond what the current description covers. If so, update both the session description--to reflect the entire conversation cohesively--and the 'updated_when_message_count_was' field.
 </improved-rewrite>
 <rationale>
 The sentence is essentially a nested conditional with two update targets, but it's linearized in a way that obscures the logic.
