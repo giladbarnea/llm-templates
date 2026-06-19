@@ -15,13 +15,14 @@ You have been working on the task described above but have not yet completed it.
    - Errors encountered and how they were resolved.
    - What approaches were tried that didn't work (and why).
 
-4. **Next Steps**
+4. **Explicitly User-mentioned or Unequivocally Necessary Next Steps**
    - Specific actions needed to complete the task.
    - Any blockers or open questions to resolve.
    - Priority order if multiple steps remain.
 
 5. **Context to Preserve**
    - User preferences or style requirements.
+   - Files (docs or otherwise) you read in the beginning of the session as baseline context gathering.
    - Domain-specific details that aren't obvious.
    - Any promises made to the user.
 
