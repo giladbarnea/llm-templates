@@ -5,7 +5,9 @@ The text may use incorrect tenses.
 Sometimes the phrasing is influenced by Hebrew discourse patterns; a simple restructure can help a lot (like fixing information order or clause flow).
 If the text is in Hebrew, apply these guidelines as if they were for Hebrew.
 
-The text might include inline comments for you. These start with 'instruction', like `// instruction: ...`. Follow them, but omit them from your final output.
+The text might include inline comments for you in this form: `// instruction: ...`. Follow them, but omit them from your final output.
+
+If an `// instruction` tells you that the text is technical, it should be processed with a somewhat different focus/emphasis, as described in the end of this prompt. 
 
 ## Examples
 
@@ -35,9 +37,10 @@ I maintain a dataset with available scores for flagship models. When a new model
 <improved-rewrite>
 This project researches and documents comprehensive LLM benchmark scores. I keep a dataset of scores for top models. When a new model comes out, I track down as many of its benchmark scores as possible and add them in. Then, I backfill any missing scores for the other models, assuming new benchmarks have been run since my last update.
 </improved-rewrite>
-<why-improved-rewrite>
-The original had overly complex and lengthy sentence structures. The paragraph was simplified without losing key details.
-</why-improved-rewrite>
+<rationale>
+`original` uses unnecessarily long and complex sentences.
+`improved-rewrite` uses shorter and simpler sentences without removing important details.
+</rationale>
 </example-3>
 
 <example-4>
@@ -45,44 +48,40 @@ The original had overly complex and lengthy sentence structures. The paragraph w
 An example of good flexibility would be saying something like "Okay, so this ends the previous section, and we're moving on to the next one: {heading content}" if the section that just ended carried significant weight.
 </original>
 <improved-rewrite>
-For good flexibility -- if the previous section was weight -- ry saying something like: “Okay, that wraps up the last section. Now, on to the next: {heading content}.”
+For good flexibility -- if the previous section was weighty -- try saying something like: “Okay, that wraps up the last section. Now, on to the next: {heading content}.”
 </improved-rewrite>
 </example-4>
 
 <example-5 type="Negative and positive examples with rationale">
 <original>
-Move $1 to thoughts/done/<same-name>.md; but also aggressively compress the contents at least 20x. anything that moves to 'done/' serves only one purpose -- an epitaph to simply mark a point in the project evolution, very lightly, for context. because by definition it won't ever have major impact on future efforts. but for anyone working on a project, it's good to have shallow knowledge of decisions that were made in the past. it squares away the perpetual question of why things the way they are in the project in its current state. and also helps avoid ~walking~ developing in circles.
+Move $1 to thoughts/done/<same-name>.md; but also aggressively compress the contents at least 20x. anything that moves to 'done/' serves only one purpose -- an epitaph to simply mark a point in the project evolution, very lightly, for context. because by definition it won't ever have major impact on future efforts. but for anyone working on a project, it's good to have shallow knowledge of decisions that were made in the past. it squares away the question of why things are the way they are in the project in its current state. and also helps avoid ~walking~ developing in circles.
 Read some of the docs that exist in done/ right now and get inspiration from the more succinct ones.
 </original>
 <bad-rewrite>
-Move $1 to `thoughts/done/<same-name>.md`, and aggressively compress i -- im for at least a 20× reduction.
+Move $1 to `thoughts/done/<same-name>.md`, and aggressively compress it -- aim for at least a 20× reduction.
 
-Anything that goes into `done/` has a single purpose: a brief epitaph that marks a moment in the project’s evolution and provides just enough context. By definition, it won’t have meaningful impact on future work. Still, it’s valuable for anyone on the project to retain shallow awareness of past decision -- o they’re not constantly asking why the project is the way it is, and so we don’t end up developing in circles.
+Anything that goes into `done/` has a single purpose: a brief epitaph that marks a moment in the project’s evolution and provides just enough context. By definition, it won’t have meaningful impact on future work. Still, it’s valuable for anyone on the project to retain shallow awareness of past decisions -- so they’re not asking why the project is the way it is, and so we don’t end up developing in circles.
 
 Skim the existing docs in `done/` and take cues from the more succinct ones.
 </bad-rewrite>
 <good-rewrite>
 Move $1 to `thoughts/done/<same-name>.md`, and aggressively compress it by at least 20×.
 
-Anything moved into `done/` has a single purpose: a brief epitaph marking a point in the project’s evolution, with just enough context to be useful. By definition, it won’t meaningfully impact future work. Still, it’s valuable for anyone on the project to have shallow knowledge of past decision -- t answers the perpetual “why the project is the way it is are the way they are” question, and helps us avoid developing in circles.
+Anything moved into `done/` has a single purpose: a brief epitaph marking a point in the project’s evolution, with just enough context to be useful. By definition, it won’t meaningfully impact future work. Still, it’s valuable for anyone on the project to have shallow knowledge of past decisions -- it explains why the project is the way it is and helps us avoid developing in circles.
 
 Read a few existing docs in `done/` and take inspiration from the most succinct ones.
 </good-rewrite>
 <rationale description="Comparing the good-rewrite vs bad-rewrite">
-1) “...and aggressively compress i -- im for at least a 20× reduction” is inferior to “...and aggressively compress it by at least 20×.” because:
-  1.1) it modifies the original meaning. “aim for {verb}” is a softer variant of the direct instruction to “{verb}”.
-  1.2) it unnecessarily makes the instruction longer than the original. Keeping the original length or less is fine; making it longer usually means unjustified added complexity.
+1) `bad-rewrite`’s “...and aggressively compress it -- aim for at least a 20× reduction” is inferior to `good-rewrite`’s “...and aggressively compress it by at least 20×.” because:
+  1.1) `bad-rewrite` modifies the original meaning. “aim for <something>” is a softer instruction than the direct instruction to “do <something>”.
+  1.2) `bad-rewrite` unnecessarily makes the instruction longer than the original. Simple and clear text is usually shorter. Making a text longer is a smell for added complexity.
 
-2) “Anything that goes into `done/`” is inferior to “Anything moved into `done/`” because the changing the original word choice (“moved”) to “goes into” doesn’t improve the flow*, therefore it is unjustified. 
-    *As per the “unless changing the word choices improves the flow, keep them close to the original” instruction.
+2) `bad-rewrite`’s “...so they’re not asking why the project is the way it is” is inferior to `good-rewrite`’s “it explains why the project is the way it is.” because:
+  2.1. `good-rewrite` directly states the benefit. `bad-rewrite` turns that positive claim (“it explains”) into an indirect negative (claiming an absence). Positive and simple is better than negative and indirect.
+  2.2. `bad-rewrite` omits what provides the explanation, and only implies that an answer exists (where `good-rewrite` says it directly).
+  2.3. `bad-rewrite` is longer than `good-rewrite` (like `1.2`: long text is a complexity smell).
 
-3) “it’s valuable for anyone on the project to retain shallow awareness of past decisions” is inferior to “it’s valuable for anyone on the project to have shallow knowledge of past decisions” because it modifies the original meaning. “knowing something” (original) is not the same as “being aware of something”, and “retaining shallow awareness” is not more streamlined than the original “having shallow knowledge”. 
-
-4) “...so they’re not constantly asking why the project is the way it is” is inferior to “it answers the perpetual ‘why things are the way they are’ question” because:
-    4.1) it changes the original meaning by quite a lot. “it answers” is similar to the original “it squares away”, and both mean a different thing than “...they’re not constantly asking”.
-    4.2) “constant” is not the same as “perpetual”.
-
-5) “Skim the existing docs” is inferior to “Read a few existing docs” because the original instruction was to “read”, which is not the same as “skim”, which implies not reading in full.
+3) `bad-rewrite`’s “Skim the existing docs” is inferior to `good-rewrite`’s “Read a few existing docs” because `bad-rewrite` changed the original meaning. The original meaning was “read”, which is not the same as “skim”, which implies not reading in full.
 </rationale>
 </example-5>
 
@@ -91,12 +90,12 @@ Read a few existing docs in `done/` and take inspiration from the most succinct 
 If there already exists an entry for the session, then only if the actual conversation you have been given inside the ‘${_SESSION_TAG}’ tag holds meaningful new information not covered by the description, you should update the session’s entry to reflect the entire given conversation cohesively and its 'updated_when_message_count_was' field.
 </original>
 <improved-rewrite>
-For existing sessions, check whether the conversation (inside the ${_SESSION_TAG} tag) contains meaningful new information beyond what the current description covers. If so, update both the session description--to reflect the entire conversation cohesively--and the 'updated_when_message_count_was' field.
+For existing sessions, check whether the conversation inside the `${_SESSION_TAG}` tag contains meaningful new information beyond the session description. If so, update the session description to reflect the entire conversation cohesively and update the `updated_when_message_count_was` field.
 </improved-rewrite>
 <rationale>
-The sentence is essentially a nested conditional with two update targets, but it's linearized in a way that obscures the logic.
-The current prose buries the action between two conditions and tacks on the second update target with "and its", making it unclear.
-The rewrite leads with context, gives the condition its own sentence, and lists related items together.
+`original` is a nested conditional with two update targets. It hides that logic inside one linear long sentence.
+`original` attaches the `updated_when_message_count_was` update with “and its,” making the `updated_when_message_count_was` update unclear.
+`improved-rewrite` leads with context, gives the condition its own sentence, and lists related items together.
 </rationale>
 </example-6>
 
@@ -108,9 +107,26 @@ The rewrite leads with context, gives the condition its own sentence, and lists 
 - The user is directing you at another agent’s work → @references/direct-peer-review-instructions.md
 </improved-rewrite>
 <rationale>
-Active is better than passive, and eliminated the “by the user” lookbehind by frontloading thus reducing cognitive load.
+`original` uses passive voice and places “by the user” after the action. This creates a look-behind, which is cognitively expensive.
+`improved-rewrite` uses active voice. It also places “the user” before the action, which removes the look-behind. This reduces cognitive load.
 </rationale>
+</example-7>
 
+<example-8>
+במסד הנתונים מצאנו הזמנות, קבלות בקופה וחשבוניות למוסדות, אבל עדיין לא הצלחנו להוכיח אילו רשומות שייכות לאותה עבודה אמיתית. מעבר על מקרה אחד יראה לצוות איך לחבר את השלבים בלי לספור הכנסה פעמיים או לחבר מסמכים שאינם קשורים.
+<original>
+</original>
+<improved-rewrite>
+מצאנו במסד הנתונים הזמנות, קבלות קופה וחשבוניות למוסדות. עדיין לא הוכחנו אילו רשומות שייכות לאותה עבודה. מעבר על מקרה אחד יראה לצוות איך לחבר בין השלבים. כך לא נספור הכנסה פעמיים ולא נחבר מסמכים לא קשורים.
+</improved-rewrite>
+<rationale>
+Long sentences are bad. Short sentences are much clearer. They don’t force the reader to maintain a growing semantic state in their mind. Write in the spirit of ASD-STE100.
+</rationale>
+</example-8>
+
+## When you are given explicitly technical text
+
+Simplify and streamline the text. Keep the terminology because it is part of a larger design which uses the terms. It‘s a technical spec so it is logic through arguments and statements, so keep the underlying logic as well. Otherwise, focus on the structure, overly stretched lookaheads/lookbehinds, optimize the semantic state machine, and linearize the content as a whole.
 
 ## Instructions
 
